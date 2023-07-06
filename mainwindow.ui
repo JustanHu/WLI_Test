@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>373</width>
+    <width>598</width>
     <height>700</height>
    </rect>
   </property>
@@ -1351,7 +1351,7 @@ QPushButton:pressed {
         <string>Pmac测试</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1395,7 +1395,7 @@ QPushButton:pressed {
 </string>
           </property>
           <property name="text">
-           <string>Pmac 断开</string>
+           <string>Pmac 连接</string>
           </property>
          </widget>
         </item>
@@ -1421,7 +1421,7 @@ QPushButton:pressed {
 </string>
           </property>
           <property name="text">
-           <string>Pmac 连接</string>
+           <string>Pmac 断开</string>
           </property>
          </widget>
         </item>
@@ -1729,9 +1729,9 @@ QPushButton:pressed {
       <widget class="QCheckBox" name="lbl_motorTest_Mode">
        <property name="geometry">
         <rect>
-         <x>50</x>
+         <x>40</x>
          <y>230</y>
-         <width>41</width>
+         <width>51</width>
          <height>24</height>
         </rect>
        </property>
@@ -1742,7 +1742,7 @@ QPushButton:pressed {
         <string>相对</string>
        </property>
       </widget>
-      <widget class="QSplitter" name="splitter_9">
+      <widget class="QSplitter" name="spl_motorTest4">
        <property name="geometry">
         <rect>
          <x>115</x>
@@ -1758,7 +1758,7 @@ QPushButton:pressed {
         <number>19</number>
        </property>
        <widget class="QWidget" name="verticalLayoutWidget">
-        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <layout class="QVBoxLayout" name="vL_motorTest1">
          <property name="spacing">
           <number>7</number>
          </property>
@@ -1766,7 +1766,7 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <item>
-          <widget class="QSplitter" name="splitter_6">
+          <widget class="QSplitter" name="spl_motorTest1">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -1850,7 +1850,7 @@ QPushButton:pressed {
         </layout>
        </widget>
        <widget class="QWidget" name="verticalLayoutWidget_2">
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QVBoxLayout" name="vL_motorTest2">
          <property name="spacing">
           <number>7</number>
          </property>
@@ -1858,7 +1858,7 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <item>
-          <widget class="QSplitter" name="splitter_7">
+          <widget class="QSplitter" name="spl_motorTest2">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -1942,7 +1942,7 @@ QPushButton:pressed {
         </layout>
        </widget>
        <widget class="QWidget" name="verticalLayoutWidget_3">
-        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <layout class="QVBoxLayout" name="vL_motorTest3">
          <property name="spacing">
           <number>7</number>
          </property>
@@ -1956,7 +1956,7 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <item>
-          <widget class="QSplitter" name="splitter_8">
+          <widget class="QSplitter" name="spl_motorTest3">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -2053,7 +2053,7 @@ QPushButton:pressed {
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
-      <widget class="QLabel" name="lbl_motorTest_3">
+      <widget class="QLabel" name="lbl_threadTest">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2110,16 +2110,16 @@ QPushButton:pressed {
         <rect>
          <x>20</x>
          <y>50</y>
-         <width>262</width>
+         <width>271</width>
          <height>51</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="hL_threadTest1">
         <property name="rightMargin">
          <number>31</number>
         </property>
         <item>
-         <widget class="QSplitter" name="splitter_2">
+         <widget class="QSplitter" name="spl_threadTest1">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -2213,11 +2213,11 @@ QPushButton:pressed {
         <rect>
          <x>20</x>
          <y>140</y>
-         <width>261</width>
+         <width>271</width>
          <height>41</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="hL_threadTest3">
         <property name="leftMargin">
          <number>25</number>
         </property>
@@ -2225,7 +2225,7 @@ QPushButton:pressed {
          <number>25</number>
         </property>
         <item>
-         <widget class="QSplitter" name="splitter_3">
+         <widget class="QSplitter" name="spl_threadTest3">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -2257,8 +2257,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2276,8 +2276,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2313,11 +2313,11 @@ background: red；
         <rect>
          <x>20</x>
          <y>180</y>
-         <width>261</width>
+         <width>271</width>
          <height>41</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <layout class="QHBoxLayout" name="hL_threadTest4">
         <property name="leftMargin">
          <number>25</number>
         </property>
@@ -2325,7 +2325,7 @@ background: red；
          <number>25</number>
         </property>
         <item>
-         <widget class="QSplitter" name="splitter_4">
+         <widget class="QSplitter" name="spl_threadTest4">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -2357,8 +2357,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2376,8 +2376,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2413,11 +2413,11 @@ background: red；
         <rect>
          <x>20</x>
          <y>100</y>
-         <width>261</width>
+         <width>271</width>
          <height>41</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QHBoxLayout" name="hL_threadTest2">
         <property name="leftMargin">
          <number>25</number>
         </property>
@@ -2425,7 +2425,7 @@ background: red；
          <number>25</number>
         </property>
         <item>
-         <widget class="QSplitter" name="splitter">
+         <widget class="QSplitter" name="spl_threadTest2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -2457,8 +2457,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2476,8 +2476,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2521,9 +2521,9 @@ background: red；
       <widget class="QPushButton" name="btn_threadTest_PX_SetZero">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>110</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2553,9 +2553,9 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_PR_SetZero">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>150</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2585,9 +2585,9 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_PZ_SetZero">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>190</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2652,8 +2652,8 @@ QPushButton:pressed {
         <rect>
          <x>45</x>
          <y>35</y>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </rect>
        </property>
        <property name="layoutDirection">
@@ -2665,8 +2665,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
        </property>
@@ -2682,8 +2682,8 @@ background: red；
         <rect>
          <x>85</x>
          <y>35</y>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </rect>
        </property>
        <property name="layoutDirection">
@@ -2695,8 +2695,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
        </property>
@@ -2776,8 +2776,8 @@ QPushButton:pressed {
         <rect>
          <x>125</x>
          <y>35</y>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </rect>
        </property>
        <property name="layoutDirection">
@@ -2789,8 +2789,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
        </property>
@@ -2823,6 +2823,19 @@ background: red；
       </widget>
      </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>190</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

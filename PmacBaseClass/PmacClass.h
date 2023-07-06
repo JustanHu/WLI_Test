@@ -20,6 +20,7 @@ public:
 	virtual ~PmacClass();
 
 public:
+
 	/*-------------------------------------------------------------------------*/
 	/**
 	  @brief    devInit，PMAC 设备连接
@@ -36,13 +37,33 @@ public:
 	  @return   none
 	 */
 	 /*--------------------------------------------------------------------------*/
-	void devClose();
+	BYTE devClose();
+
+	/*-------------------------------------------------------------------------*/
+	/**
+	  @brief    setIOStatus，设置电机IO电平
+	  @param    sPin	IO引脚
+	  @param    bStatus	使能状态（1：低电平；0：高电平）
+	  @return   -1 执行异常； 1 执行正常
+	 */
+	 /*--------------------------------------------------------------------------*/
+	BYTE setIOStatus(short sPin, bool bStatus);
+
+	/*-------------------------------------------------------------------------*/
+	/**
+	  @brief    getIOStatus，获取IO状态
+	  @param    sPin	IO引脚
+	  @return   0 高电平； 1 低电平
+	 */
+	 /*--------------------------------------------------------------------------*/
+	BYTE getIOStatus(short sPin);
+
 
 public:
 	long			testInterface, dwDevice;
 	BOOL			pbSuccess;
 	static BOOL		pbDriverOpen;
-	IPmacDevice* pmacDevice;
+	IPmacDevice*	pmacDevice;
 };
 
 #endif
