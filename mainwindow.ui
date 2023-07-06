@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>308</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>308</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>7</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>-5</x>
+      <y>-2</y>
+      <width>400</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(228, 228, 228);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>TCP测试</string>
+     </attribute>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>13</y>
+        <width>291</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>271</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="IP_PortLayout">
+        <item>
+         <widget class="QLineEdit" name="le_IP">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    border: 1px solid #707070;
+    border-radius: 1px;
+    padding: 1px;
+    background-color: white;
+    color: #000000;
+    font-size: 10px;
+}
+
+QLineEdit:hover {
+    background-color: #F0F0F0;
+}
+
+QLineEdit:focus {
+    border-color: #0078D7;
+    background-color: white;
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_Port">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>4</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    border: 1px solid #707070;
+    border-radius: 1px;
+    padding: 1px;
+    background-color: white;
+    color: #000000;
+    font-size: 10px;
+}
+
+QLineEdit:hover {
+    background-color: #F0F0F0;
+}
+
+QLineEdit:focus {
+    border-color: #0078D7;
+    background-color: white;
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_tcpDisconnect">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>5</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #C44C51;
+    color: white;
+    border: 1px solid #C44C51;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #A13E43;
+}
+
+QPushButton:pressed {
+    background-color: #883336;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>断开</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_Connect">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>5</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #909090;
+    color: white;
+    border: 1px solid #909090;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #707070;
+}
+
+QPushButton:pressed {
+    background-color: #505050;
+}</string>
+          </property>
+          <property name="text">
+           <string>连接</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>IP地址及端口号输入：</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_Turret_Init" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>170</y>
+        <width>141</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Turret 独立初始化：</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Turret_Init">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>37</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Turret Initialization</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_Turret_MMD" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>91</y>
+        <width>291</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Turret / MMD 倍数更换：</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>261</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="Turret_MMDLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>3</horstretch>
+            <verstretch>2</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 6pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 8px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Turret：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cmb_turretChange">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>5</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+    background-color: #FFFFFF;
+    
+	color: rgb(0, 0, 0);
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 2px;
+    min-height: 8px;
+    min-width: 40px;
+	text-align: center;  /* 居中对齐文本 */
+}
+
+QComboBox:hover {
+    background-color: #F0F0F0;
+}
+
+QComboBox:pressed {
+    background-color: #E0E0E0;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right;
+    width: 10px;
+    border-left: 1px solid #CCCCCC;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: #E0E0E0;
+}
+
+QComboBox::down-arrow {
+    image: url(down-arrow.png); //待替换
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #555555;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #CCCCCC;
+}
+</string>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="insertPolicy">
+           <enum>QComboBox::InsertAtBottom</enum>
+          </property>
+          <item>
+           <property name="text">
+            <string>   Sensor</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>     10 X</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>     20 X</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>     50 X</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_4" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>2</horstretch>
+            <verstretch>2</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>3</horstretch>
+            <verstretch>2</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 6pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 8px;
+}</string>
+          </property>
+          <property name="text">
+           <string>MMD：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cmb_MMDChange">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>5</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox {
+    background-color: #FFFFFF;
+    
+	color: rgb(0, 0, 0);
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 2px;
+    min-height: 8px;
+    min-width: 40px;
+	text-align: center;  /* 居中对齐文本 */
+}
+
+QComboBox:hover {
+    background-color: #F0F0F0;
+}
+
+QComboBox:pressed {
+    background-color: #E0E0E0;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right;
+    width: 10px;
+    border-left: 1px solid #CCCCCC;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: #E0E0E0;
+}
+
+QComboBox::down-arrow {
+    image: url(down-arrow.png); //待替换
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #555555;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #CCCCCC;
+}
+
+</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>     .55 X</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>      1 X</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>      2 X</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>6</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="get_Turret_MMD_Layout" stretch="0,0">
+        <property name="spacing">
+         <number>5</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="btn_getTurret">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3E92CC;
+    color: white;
+    border: 1px solid #3E92CC;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #2D7FB4;
+}
+
+QPushButton:pressed {
+    background-color: #1F5A80;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>当前Turret</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_getMMD">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #51C45C;
+    color: white;
+    border: 1px solid #51C45C;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #43A146;
+}
+
+QPushButton:pressed {
+    background-color: #368438;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>当前MMD</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_Autofocus" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>170</y>
+        <width>141</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Bruker 自动聚焦：</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Autofocus">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>37</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Do Autofocus</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_SingleAcquisition" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>250</y>
+        <width>141</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>单次测量：</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_SingleAcquisition">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>37</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Single Acquisition</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_Measurement" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>250</y>
+        <width>141</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>按 Recipe 测量：</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Measurement">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>37</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Measurement</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_ZScanner" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>291</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Z Scanner：</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spb_setZScanner">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>40</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/* 设置SpinBox的样式 */
+QSpinBox {
+    background-color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 1px;
+    padding: 1px;
+    color: #000000;
+    font-size: 10px;
+}
+
+/* 设置SpinBox的悬停状态样式 */
+QSpinBox:hover {
+    background-color: #F0F0F0;
+}
+
+/* 设置SpinBox的聚焦状态样式 */
+QSpinBox:focus {
+    border-color: #0078D7;
+    background-color: #ffffff;
+}
+
+
+
+</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="maximum">
+        <number>4000000</number>
+       </property>
+       <property name="value">
+        <number>4000000</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_getZScanner">
+       <property name="geometry">
+        <rect>
+         <x>151</x>
+         <y>8</y>
+         <width>121</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #D98880;
+    color: white;
+    border: 1px solid #D98880;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #BA483E;
+}
+
+QPushButton:pressed {
+    background-color: #92352E;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>获取当前Z Scanner 位置</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>41</y>
+         <width>181</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>2</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 10pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>移动 Z Scanner位置(nm)(绝对运动)：</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_Intensity" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>291</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Intensity：</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_getIntensity">
+       <property name="geometry">
+        <rect>
+         <x>151</x>
+         <y>8</y>
+         <width>121</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #FFD966;
+    color: white;
+    border: 1px solid #FFD966;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #E6BE47;
+}
+
+QPushButton:pressed {
+    background-color: #CCA733;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>获取当前Intensity</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>41</y>
+         <width>181</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>2</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 10pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>设置当前的Intensity（%）：</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="dspb_setIntensity">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>38</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/* 设置DoubleSpinBox的样式 */
+QDoubleSpinBox {
+    background-color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 1px;
+    padding: 1px;
+    color: #000000;
+    font-size: 10px;
+}
+
+/* 设置DoubleSpinBox的悬停状态样式 */
+QDoubleSpinBox:hover {
+    background-color: #F0F0F0;
+}
+
+/* 设置DoubleSpinBox的聚焦状态样式 */
+QDoubleSpinBox:focus {
+    border-color: #0078D7;
+    background-color: #ffffff;
+}
+</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.470000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_LockMode" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>490</y>
+        <width>291</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>WLI模式：</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_getMode">
+       <property name="geometry">
+        <rect>
+         <x>151</x>
+         <y>8</y>
+         <width>121</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #FF8C00;
+    color: white;
+    border: 1px solid #FF8C00;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #E67300;
+}
+
+QPushButton:pressed {
+    background-color: #CC5C00;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>获取当前WLI模式</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>41</y>
+         <width>181</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>2</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 10pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>设置当前WLI模式：</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>271</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="LockoutLayout">
+        <item>
+         <widget class="QPushButton" name="btn_Lockout">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #D3D3D3;
+    color: #333333;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #CCCCCC;
+}
+
+QPushButton:pressed {
+    background-color: #B2B2B2;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>完全锁定</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_InstrumentControlOnly">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #D3D3D3;
+    color: #333333;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #CCCCCC;
+}
+
+QPushButton:pressed {
+    background-color: #B2B2B2;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>仅仪表控制</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_Normal">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #D3D3D3;
+    color: #333333;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #CCCCCC;
+}
+
+QPushButton:pressed {
+    background-color: #B2B2B2;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>正常模式</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>PMAC测试</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
