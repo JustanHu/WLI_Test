@@ -1,5 +1,8 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -7,12 +10,23 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("MRe-WLI Test Program");
+
+    // 创建pmac对象和电机对象
+    pmacDevice = new PmacClass();
+    motorPX = new MotorClass(pmacDevice,"PX");
+    motorPZ = new MotorClass(pmacDevice,"PZ");
+    motorPR = new MotorClass(pmacDevice,"PR");
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    delete pmacDevice;
+    delete motorPX;
+    delete motorPZ;
+    delete motorPR;
+
     delete WLITest;
+    delete ui;
 }
 
 
@@ -303,4 +317,23 @@ void MainWindow::on_btn_Normal_clicked()//设置当前白光为仅仪表控制�
 
 
 
+
+// PmacClass 类测试
+void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
+{
+    switch(pmacDevice->devInit())
+    {
+    case -1:
+    {
+        ui->statusbar->showMessage("Pmac Connect Failed!");
+        break;
+    }
+    case 1:
+    {
+        ui->statusbar->showMessage("Pmac Connect Succeeded!");
+        break;
+    }
+
+    }
+}
 

@@ -1,6 +1,7 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "MotorClass.h"
 #include <QMainWindow>
 #include "brukerWLI.h"
 #include <QTimer>
@@ -117,10 +118,17 @@ private slots:
     void on_btn_tcpDisconnect_clicked();
 
 
+/**
+ * @brief Pmac 连接按钮
+ */
+    void on_btn_pmacTest_Connect_clicked();
 
 private:
     Ui::MainWindow *ui;
-
+    PmacClass* pmacDevice;
+    MotorClass* motorPX;
+    MotorClass* motorPZ;
+    MotorClass* motorPR;
 };
 
 
