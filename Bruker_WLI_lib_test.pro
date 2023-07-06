@@ -16,6 +16,11 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    PmacBaseClass/MotorClass.h \
+    PmacBaseClass/PmacClass.h \
+    PmacBaseClass/inifile.h \
+    PmacBaseClass/pch.h \
+    PmacBaseClass/pmacserver.h \
     brukerWLI.h \
     mainwindow.h
 
@@ -28,3 +33,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 
+# 外部库
+win32: LIBS += -L$$PWD/PmacBaseClass/ -lPmacDLL
+
+INCLUDEPATH += $$PWD/PmacBaseClass
+DEPENDPATH += $$PWD/PmacBaseClass

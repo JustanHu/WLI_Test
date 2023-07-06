@@ -116,6 +116,8 @@ private slots:
  */
     void on_btn_tcpDisconnect_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
 

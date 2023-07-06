@@ -302,3 +302,5 @@ void MainWindow::on_btn_Normal_clicked()//设置当前白光为仅仪表控制�
 
 
 
+
+
