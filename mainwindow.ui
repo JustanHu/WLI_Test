@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>373</width>
+    <width>598</width>
     <height>700</height>
    </rect>
   </property>
@@ -2110,7 +2110,7 @@ QPushButton:pressed {
         <rect>
          <x>20</x>
          <y>50</y>
-         <width>262</width>
+         <width>271</width>
          <height>51</height>
         </rect>
        </property>
@@ -2213,7 +2213,7 @@ QPushButton:pressed {
         <rect>
          <x>20</x>
          <y>140</y>
-         <width>263</width>
+         <width>271</width>
          <height>41</height>
         </rect>
        </property>
@@ -2257,8 +2257,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2276,8 +2276,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2313,7 +2313,7 @@ background: red；
         <rect>
          <x>20</x>
          <y>180</y>
-         <width>263</width>
+         <width>271</width>
          <height>41</height>
         </rect>
        </property>
@@ -2357,8 +2357,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2376,8 +2376,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2413,7 +2413,7 @@ background: red；
         <rect>
          <x>20</x>
          <y>100</y>
-         <width>263</width>
+         <width>271</width>
          <height>41</height>
         </rect>
        </property>
@@ -2457,8 +2457,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2476,8 +2476,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
            </property>
@@ -2521,9 +2521,9 @@ background: red；
       <widget class="QPushButton" name="btn_threadTest_PX_SetZero">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>110</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2553,9 +2553,9 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_PR_SetZero">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>150</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2585,9 +2585,9 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_PZ_SetZero">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>300</x>
          <y>190</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2652,8 +2652,8 @@ QPushButton:pressed {
         <rect>
          <x>45</x>
          <y>35</y>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </rect>
        </property>
        <property name="layoutDirection">
@@ -2665,8 +2665,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
        </property>
@@ -2682,8 +2682,8 @@ background: red；
         <rect>
          <x>85</x>
          <y>35</y>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </rect>
        </property>
        <property name="layoutDirection">
@@ -2695,8 +2695,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
        </property>
@@ -2776,8 +2776,8 @@ QPushButton:pressed {
         <rect>
          <x>125</x>
          <y>35</y>
-         <width>16</width>
-         <height>16</height>
+         <width>18</width>
+         <height>18</height>
         </rect>
        </property>
        <property name="layoutDirection">
@@ -2789,8 +2789,8 @@ min-width:     14px;
 min-height:    14px;     
 max-width:     14px;     
 max-height:    14px;     
-border-radius: 8px;     
-border:1px solid red;  
+border-radius: 9px;     
+border:2px solid gray;  
 background: red；        
 }</string>
        </property>
@@ -2823,6 +2823,19 @@ background: red；
       </widget>
      </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>190</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

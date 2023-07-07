@@ -119,9 +119,37 @@ private slots:
 
 
 /**
- * @brief Pmac 连接按钮
+ * @brief Pmac 连接
  */
     void on_btn_pmacTest_Connect_clicked();
+
+/**
+ * @brief Pmac 断开
+ */
+    void on_btn_pmacTest_Close_clicked();
+
+/**
+ * @brief 设置 IO 高电平
+ */
+    void on_btn_ioTest_Open_clicked();
+
+
+/**
+ * @brief 设置 IO 低电平
+ */
+
+
+
+/**
+ * @brief 测试函数
+ */
+    void on_pushButton_clicked();
+
+private:
+/**
+ * @brief 设置 Label 状态灯颜色
+ */
+     void setLabelColor(QLabel* label, QString color);
 
 private:
     Ui::MainWindow *ui;
@@ -129,7 +157,13 @@ private:
     MotorClass* motorPX;
     MotorClass* motorPZ;
     MotorClass* motorPR;
+
+
+
+
 };
+
+
 
 
 #endif // MAINWINDOW_H
