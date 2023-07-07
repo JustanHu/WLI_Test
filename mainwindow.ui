@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>308</width>
+    <width>598</width>
     <height>700</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>308</width>
+    <width>600</width>
     <height>700</height>
    </size>
   </property>
@@ -29,11 +29,14 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>-5</x>
       <y>-2</y>
-      <width>400</width>
+      <width>381</width>
       <height>800</height>
      </rect>
     </property>
@@ -41,7 +44,7 @@
      <string notr="true">background-color: rgb(228, 228, 228);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1312,11 +1315,1527 @@ QPushButton:pressed {
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab_PMAC">
      <attribute name="title">
       <string>PMAC测试</string>
      </attribute>
+     <widget class="QWidget" name="wd_pmacTest" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>171</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="lbl_pmacTest">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Pmac测试</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>141</width>
+         <height>55</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="vL_pmacTest">
+        <property name="leftMargin">
+         <number>10</number>
+        </property>
+        <property name="topMargin">
+         <number>5</number>
+        </property>
+        <property name="rightMargin">
+         <number>10</number>
+        </property>
+        <property name="bottomMargin">
+         <number>5</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="btn_pmacTest_Connect">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Pmac 连接</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_pmacTest_Close">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Pmac 断开</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_motorTest" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>361</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="lbl_motorTest">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Motor测试</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>291</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gL_motorTest">
+        <item row="1" column="0">
+         <widget class="QLabel" name="lbl_motorTest_InitSpeed">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Init Speed</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="lbl_motorTest_PR">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>PR</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="lbl_motorTest_PR_HomeSpeed">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="lbl_motorTest_PX_HomeSpeed">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_motorTest_HomeSpeed">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Home Speed</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="lbl_motorTest_PZ_HomeSpeed">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="lbl_motorTest_PR_InitSpeed">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="lbl_motorTest_PZ_InitSpeed">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="lbl_motorTest_PX_MovDis">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="lbl_motorTest_PX_InitSpeed">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="lbl_motorTest_PR_MovDis">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLabel" name="lbl_motorTest_PZ_MovDis">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lbl_motorTest_MovDis">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Mov Dis</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lbl_motorTest_Axis">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Axis</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="lbl_motorTest_PZ">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>PZ</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="lbl_motorTest_PX">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+          </property>
+          <property name="text">
+           <string>PX</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QCheckBox" name="lbl_motorTest_Mode">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>230</y>
+         <width>51</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="text">
+        <string>相对</string>
+       </property>
+      </widget>
+      <widget class="QSplitter" name="spl_motorTest4">
+       <property name="geometry">
+        <rect>
+         <x>115</x>
+         <y>199</y>
+         <width>201</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="handleWidth">
+        <number>19</number>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <layout class="QVBoxLayout" name="vL_motorTest1">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QSplitter" name="spl_motorTest1">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="handleWidth">
+            <number>6</number>
+           </property>
+           <widget class="QPushButton" name="lbl_motorTest_PX_ConstSpeed">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>定速</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="lbl_motorTest_PX_ConstLength">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>定长</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="lbl_motorTest_PX_Stop">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>STOP</string>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <layout class="QVBoxLayout" name="vL_motorTest2">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QSplitter" name="spl_motorTest2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="handleWidth">
+            <number>6</number>
+           </property>
+           <widget class="QPushButton" name="lbl_motorTest_PR_ConstSpeed">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>定速</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="lbl_motorTest_PR_ConstLength">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>定长</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="lbl_motorTest_PR_Stop">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>STOP</string>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_3">
+        <layout class="QVBoxLayout" name="vL_motorTest3">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QSplitter" name="spl_motorTest3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="handleWidth">
+            <number>6</number>
+           </property>
+           <widget class="QPushButton" name="lbl_motorTest_PZ_ConstSpeed">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>定速</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="lbl_motorTest_PZ_ConstLength">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>定长</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="lbl_motorTest_PZ_Stop">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>STOP</string>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_pmacTest_3" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>361</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="lbl_threadTest">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>线程测试</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_threadTest_Open">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>开启监控</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>271</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hL_threadTest1">
+        <property name="rightMargin">
+         <number>31</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="spl_threadTest1">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="handleWidth">
+           <number>20</number>
+          </property>
+          <widget class="QLabel" name="lbl_threadTest_Axis">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>   Axis</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PLimit">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>PLimit</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_NLimit">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>NLimit</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_Pos">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Pos</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="indent">
+            <number>-1</number>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_Vel">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Vel</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hL_threadTest3">
+        <property name="leftMargin">
+         <number>25</number>
+        </property>
+        <property name="rightMargin">
+         <number>25</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="spl_threadTest3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="handleWidth">
+           <number>31</number>
+          </property>
+          <widget class="QLabel" name="lbl_threadTest_PR">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>PR</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PR_PLimit">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PR_NLimit">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PR_Pos">
+           <property name="text">
+            <string>100</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PR_Vel">
+           <property name="text">
+            <string>20</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>180</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hL_threadTest4">
+        <property name="leftMargin">
+         <number>25</number>
+        </property>
+        <property name="rightMargin">
+         <number>25</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="spl_threadTest4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="handleWidth">
+           <number>31</number>
+          </property>
+          <widget class="QLabel" name="lbl_threadTest_PZ">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>PZ</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PZ_PLimit">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PZ_NLimit">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PZ_Pos">
+           <property name="text">
+            <string>100</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PZ_Vel">
+           <property name="text">
+            <string>20</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="hL_threadTest2">
+        <property name="leftMargin">
+         <number>25</number>
+        </property>
+        <property name="rightMargin">
+         <number>25</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="spl_threadTest2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="handleWidth">
+           <number>31</number>
+          </property>
+          <widget class="QLabel" name="lbl_threadTest_PX">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+           </property>
+           <property name="text">
+            <string>PX</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PX_PLimit">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PX_NLimit">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PX_Pos">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>100</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lbl_threadTest_PX_Vel">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>20</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="btn_threadTest_PX_SetZero">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>110</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>设置零点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_threadTest_PR_SetZero">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>150</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>设置零点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_threadTest_PZ_SetZero">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>190</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>设置零点</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="wd_ioTest" native="true">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>10</y>
+        <width>181</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <widget class="QLabel" name="lbl_ioTest">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>IO测试</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_ioTest_M1">
+       <property name="geometry">
+        <rect>
+         <x>45</x>
+         <y>35</y>
+         <width>18</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_ioTest_M2">
+       <property name="geometry">
+        <rect>
+         <x>85</x>
+         <y>35</y>
+         <width>18</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_ioTest_Open">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>52</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Open</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_ioTest_Close">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>60</y>
+         <width>52</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 10px;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_ioTest_M3">
+       <property name="geometry">
+        <rect>
+         <x>125</x>
+         <y>35</y>
+         <width>18</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+min-width:     14px;     
+min-height:    14px;     
+max-width:     14px;     
+max-height:    14px;     
+border-radius: 9px;     
+border:2px solid gray;  
+background: red；        
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_ioTest_Pins">
+       <property name="geometry">
+        <rect>
+         <x>45</x>
+         <y>15</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font: 9pt &quot;Adobe Heiti Std&quot;;
+	color: rgb(23, 23, 23);
+    font-size: 11px;
+}</string>
+       </property>
+       <property name="text">
+        <string>M1     M2     M3</string>
+       </property>
+      </widget>
+     </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>190</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

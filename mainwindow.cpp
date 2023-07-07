@@ -1,5 +1,9 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
+#include <QString>
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -7,12 +11,23 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("MRe-WLI Test Program");
+
+    // 创建pmac对象和电机对象
+    pmacDevice = new PmacClass();
+    motorPX = new MotorClass(pmacDevice,"PX");
+    motorPZ = new MotorClass(pmacDevice,"PZ");
+    motorPR = new MotorClass(pmacDevice,"PR");
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    delete pmacDevice;
+    delete motorPX;
+    delete motorPZ;
+    delete motorPR;
+
     delete WLITest;
+    delete ui;
 }
 
 
@@ -301,4 +316,120 @@ void MainWindow::on_btn_Normal_clicked()//设置当前白光为仅仪表控制�
 
 
 
+
+
+
+// Pmac 测试
+void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
+{
+    switch(pmacDevice->devInit()) {
+    case -1: {
+        ui->statusbar->showMessage("Pmac Connect Failed!");
+        break; }
+    case 1: {
+        ui->statusbar->showMessage("Pmac Connect Succeeded!");
+        break; }
+    }
+}
+
+
+void MainWindow::on_btn_pmacTest_Close_clicked() // PMAC 断开按钮
+{
+    switch(pmacDevice->devClose()) {
+    case -1: {
+        ui->statusbar->showMessage("Pmac Close Failed!");
+        break; }
+    case 1: {
+        ui->statusbar->showMessage("Pmac Close Successed!");
+        break; }
+    }
+}
+
+// IO 测试
+void MainWindow::on_btn_ioTest_Open_clicked() // 开 IO 按钮
+{
+    switch(pmacDevice->setIOStatus(1,0)) { // M1 高电平
+    case -1: {
+        ui->statusbar->showMessage("Pmac Set IO Failed!");
+        break; }
+    case 1: {
+        ui->statusbar->showMessage("Pmac Set IO Successed!");
+        setLabelColor(ui->lbl_ioTest_M1,QString("green"));
+        setLabelColor(ui->lbl_ioTest_M2,QString("green"));
+        setLabelColor(ui->lbl_ioTest_M3,QString("green"));
+        break; }
+    }
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    qDebug() << test();
+}
+
+
+
+
+
+void MainWindow::on_btn_ioTest_Close_clicked()
+{
+    switch(pmacDevice->setIOStatus(1,0)) { // M1 高电平
+    case -1: {
+        ui->statusbar->showMessage("Pmac Set IO Failed!");
+        break; }
+    case 1: {
+        ui->statusbar->showMessage("Pmac Set IO Successed!");
+        setLabelColor(ui->lbl_ioTest_M1,QString("green"));
+        setLabelColor(ui->lbl_ioTest_M2,QString("green"));
+        setLabelColor(ui->lbl_ioTest_M3,QString("green"));
+        break; }
+    }
+}
+
+BYTE MainWindow::test()
+{
+    return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void MainWindow::setLabelColor(QLabel* label, QString color)
+{
+    const QString SheetStyle =
+           "min-width:14px;         \
+            min-height:14px;        \
+            max-width:14px;         \
+            max-height:14px;        \
+            border-radius:9px;      \
+            border:2px solid gray;  \
+            background:" + color;
+    label->setStyleSheet(SheetStyle);
+}
 
