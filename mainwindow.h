@@ -138,6 +138,7 @@ private slots:
  * @brief 设置 IO 低电平
  */
 
+    void on_btn_ioTest_Close_clicked();
 
 
 /**
@@ -150,6 +151,8 @@ private:
  * @brief 设置 Label 状态灯颜色
  */
      void setLabelColor(QLabel* label, QString color);
+
+     BYTE test();
 
 private:
     Ui::MainWindow *ui;
