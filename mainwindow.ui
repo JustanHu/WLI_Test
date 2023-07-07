@@ -905,7 +905,7 @@ QSpinBox:focus {
         <enum>QAbstractSpinBox::NoButtons</enum>
        </property>
        <property name="maximum">
-        <number>4000000</number>
+        <number>10000000</number>
        </property>
        <property name="value">
         <number>4000000</number>
@@ -1220,7 +1220,7 @@ QPushButton:pressed {
         <string>设置当前WLI模式：</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
