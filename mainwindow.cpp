@@ -2,8 +2,10 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QString>
+#include <thread>
 
 using namespace std;
+static bool th_threadOpenFlag = FALSE;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,6 +27,7 @@ MainWindow::~MainWindow()
     delete motorPX;
     delete motorPZ;
     delete motorPR;
+    th_threadOpenFlag = TRUE;
 
     delete WLITest;
     delete ui;
@@ -354,64 +357,198 @@ void MainWindow::on_btn_ioTest_Open_clicked() // 开 IO 按钮
         break; }
     case 1: {
         ui->statusbar->showMessage("Pmac Set IO Successed!");
-        setLabelColor(ui->lbl_ioTest_M1,QString("green"));
-        setLabelColor(ui->lbl_ioTest_M2,QString("green"));
-        setLabelColor(ui->lbl_ioTest_M3,QString("green"));
+        setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
         break; }
     }
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_btn_ioTest_Close_clicked() // 关 IO 按钮
 {
-    qDebug() << test();
-}
-
-
-
-
-
-void MainWindow::on_btn_ioTest_Close_clicked()
-{
-    switch(pmacDevice->setIOStatus(1,0)) { // M1 高电平
+    switch(pmacDevice->setIOStatus(1,1)) { // M1 低电平
     case -1: {
         ui->statusbar->showMessage("Pmac Set IO Failed!");
         break; }
     case 1: {
         ui->statusbar->showMessage("Pmac Set IO Successed!");
-        setLabelColor(ui->lbl_ioTest_M1,QString("green"));
-        setLabelColor(ui->lbl_ioTest_M2,QString("green"));
-        setLabelColor(ui->lbl_ioTest_M3,QString("green"));
+        setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
         break; }
     }
 }
 
-BYTE MainWindow::test()
+// MOTOR 测试
+void MainWindow::on_lbl_motorTest_PX_ConstSpeed_clicked() // PX轴定速运动
 {
-    return -1;
+    int dir = 0;
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+    motorPX->singleConstSpeedMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),dir);
+}
+
+void MainWindow::on_lbl_motorTest_PR_ConstSpeed_clicked()   // PR轴定速运动
+{
+    int dir = 0;
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+    motorPR->singleConstSpeedMove(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),dir);
+}
+
+void MainWindow::on_lbl_motorTest_PZ_ConstSpeed_clicked()   // PZ轴定速运动
+{
+    int dir = 0;
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+    motorPZ->singleConstSpeedMove(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),dir);
+}
+
+
+void MainWindow::on_lbl_motorTest_PX_ConstLength_clicked()  // PX轴定长运动
+{
+    int dir = 0;
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+
+    if(ui->cb_motorTest_Absolute->isChecked())  // 绝对
+        motorPX->singleConstLengthMoveTo(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
+    if(ui->cb_motorTest_Relative->isChecked())  // 相对
+        motorPX->singleConstLengthMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
+}
+
+
+void MainWindow::on_lbl_motorTest_PR_ConstLength_clicked()  // PR轴定长运动
+{
+    int dir = 0;
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+
+    if(ui->cb_motorTest_Absolute->isChecked())  // 绝对
+        motorPR->singleConstLengthMoveTo(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
+    if(ui->cb_motorTest_Relative->isChecked())  // 相对
+        motorPR->singleConstLengthMove(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
+}
+
+
+void MainWindow::on_lbl_motorTest_PZ_ConstLength_clicked()  // PZ轴定长运动
+{
+    int dir = 0;
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+
+    if(ui->cb_motorTest_Absolute->isChecked())  // 绝对
+        motorPZ->singleConstLengthMoveTo(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
+    if(ui->cb_motorTest_Relative->isChecked())  // 相对
+        motorPZ->singleConstLengthMove(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
+}
+
+
+void MainWindow::on_lbl_motorTest_PX_Stop_clicked()     // PX轴停止
+{
+    motorPX->singleStop(motorPX->axisNumber);
+}
+
+void MainWindow::on_lbl_motorTest_PR_Stop_clicked()     // PR轴停止
+{
+    motorPR->singleStop(motorPR->axisNumber);
+}
+
+void MainWindow::on_lbl_motorTest_PZ_Stop_clicked()     // PZ轴停止
+{
+    motorPZ->singleStop(motorPZ->axisNumber);
+}
+
+void MainWindow::on_btn_motorTest_OpenLimit_clicked()    // PX\PR\PZ 开限位
+{
+    motorPX->setLimitStatus(motorPX->axisNumber,1);
+    motorPR->setLimitStatus(motorPR->axisNumber,1);
+    motorPZ->setLimitStatus(motorPZ->axisNumber,1);
+}
+
+
+void MainWindow::on_btn_motorTest_CloseLimit_clicked()    // PX\PR\PZ 关限位
+{
+    motorPX->setLimitStatus(motorPX->axisNumber,0);
+    motorPR->setLimitStatus(motorPR->axisNumber,0);
+    motorPZ->setLimitStatus(motorPZ->axisNumber,0);
+}
+
+
+
+// THREAD 测试
+void MainWindow::on_btn_threadTest_Open_clicked()       // 开启 PMAC 实时线程
+{
+    std::thread th_threadOpen (&MainWindow::th_threadOpen,this);
+    std::cout << "th_threadOpen ID:" << th_threadOpen.get_id() << std::endl;
+    th_threadOpen.join();
+}
+
+void MainWindow::th_threadOpen()
+{
+    double value;
+    while(!th_threadOpenFlag)
+    {
+        // 读取位置
+        value = motorPX->getPosStatus(motorPX->axisNumber);
+        ui->lbl_threadTest_PX_Pos->setText(QString::number(value, 'f', 2));
+
+        value = motorPR->getPosStatus(motorPR->axisNumber);
+        ui->lbl_threadTest_PR_Pos->setText(QString::number(value, 'f', 2));
+
+        value = motorPZ->getPosStatus(motorPZ->axisNumber);
+        ui->lbl_threadTest_PZ_Pos->setText(QString::number(value, 'f', 2));
+
+        // 读取速度
+        value = motorPX->getVelStatus(motorPX->axisNumber);
+        ui->lbl_threadTest_PX_Vel->setText(QString::number(value, 'f', 2));
+
+        value = motorPR->getVelStatus(motorPR->axisNumber);
+        ui->lbl_threadTest_PR_Vel->setText(QString::number(value, 'f', 2));
+
+        value = motorPZ->getVelStatus(motorPZ->axisNumber);
+        ui->lbl_threadTest_PZ_Vel->setText(QString::number(value, 'f', 2));
+
+        // 读取IO
+        if(!pmacDevice->getIOStatus(1))     // 高电平
+            setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
+        else                                // 低电平
+            setLabelColor(ui->lbl_ioTest_M1,QString("#FF4040"));
+
+        if(!pmacDevice->getIOStatus(2))     // 高电平
+            setLabelColor(ui->lbl_ioTest_M2,QString("#76EE00"));
+        else                                // 低电平
+            setLabelColor(ui->lbl_ioTest_M2,QString("#FF4040"));
+
+        if(!pmacDevice->getIOStatus(3))     // 高电平
+            setLabelColor(ui->lbl_ioTest_M3,QString("#76EE00"));
+        else                                // 低电平
+            setLabelColor(ui->lbl_ioTest_M3,QString("#FF4040"));
+
+        this_thread::sleep_for(std::chrono::milliseconds(50));
+    }
+}
+
+
+void MainWindow::on_btn_threadTest_PX_SetZero_clicked()
+{
+    motorPX->setZeroPoint(motorPZ->axisNumber);
+}
+
+void MainWindow::on_btn_threadTest_PR_SetZero_clicked()
+{
+    motorPR->setZeroPoint(motorPR->axisNumber);
+}
+
+void MainWindow::on_btn_threadTest_PZ_SetZero_clicked()
+{
+    motorPZ->setZeroPoint(motorPZ->axisNumber);
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void MainWindow::on_pushButton_clicked()
+{
+    setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
+}
 
 
 
@@ -432,4 +569,21 @@ void MainWindow::setLabelColor(QLabel* label, QString color)
             background:" + color;
     label->setStyleSheet(SheetStyle);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

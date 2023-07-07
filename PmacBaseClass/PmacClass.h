@@ -25,7 +25,7 @@ public:
 	/**
 	  @brief    devInit，PMAC 设备连接
 	  @param    none
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE devInit();
@@ -44,7 +44,7 @@ public:
 	  @brief    setIOStatus，设置电机IO电平
 	  @param    sPin	IO引脚
 	  @param    bStatus	使能状态（1：低电平；0：高电平）
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE setIOStatus(short sPin, bool bStatus);

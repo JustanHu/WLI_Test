@@ -146,13 +146,45 @@ private slots:
  */
     void on_pushButton_clicked();
 
+
+    void on_lbl_motorTest_PX_ConstSpeed_clicked();
+
+    void on_lbl_motorTest_PR_ConstSpeed_clicked();
+
+    void on_lbl_motorTest_PZ_ConstSpeed_clicked();
+
+    void on_lbl_motorTest_PX_ConstLength_clicked();
+
+    void on_lbl_motorTest_PR_ConstLength_clicked();
+
+    void on_lbl_motorTest_PZ_ConstLength_clicked();
+
+    void on_lbl_motorTest_PX_Stop_clicked();
+
+    void on_lbl_motorTest_PR_Stop_clicked();
+
+    void on_lbl_motorTest_PZ_Stop_clicked();
+
+    void on_btn_threadTest_Open_clicked();
+
+    void on_btn_threadTest_PX_SetZero_clicked();
+
+    void on_btn_threadTest_PR_SetZero_clicked();
+
+    void on_btn_threadTest_PZ_SetZero_clicked();
+
+
+    void on_btn_motorTest_OpenLimit_clicked();
+
+    void on_btn_motorTest_CloseLimit_clicked();
+
 private:
 /**
  * @brief 设置 Label 状态灯颜色
  */
-     void setLabelColor(QLabel* label, QString color);
+    void setLabelColor(QLabel* label, QString color);
 
-     BYTE test();
+    void th_threadOpen();
 
 private:
     Ui::MainWindow *ui;

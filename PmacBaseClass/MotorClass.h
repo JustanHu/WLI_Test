@@ -18,7 +18,7 @@ public:
 	  @brief    setInitVel，设置电机初始速度
 	  @param    sAxis	电机轴号
 	  @param    dbVel	初始速度
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE setInitVel(short sAxis, double dbVel);
@@ -28,7 +28,7 @@ public:
 	@brief    setHomeVel，设置电机回零速度
 	@param    sAxis	电机轴号
 	@param    dbVel	初始速度
-	@return   -1 执行异常； 1 执行正常
+	@return   0 执行异常； 1 执行正常
 	*/
 	/*--------------------------------------------------------------------------*/
 	BYTE setHomeVel(short sAxis, double dbVel);
@@ -37,7 +37,7 @@ public:
 	/**
 	  @brief    setZeroPoint，无移动地设置电机当前位置为0
 	  @param    sAxis	电机轴号
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE setZeroPoint(short sAxis);
@@ -47,7 +47,7 @@ public:
 	  @brief    setLimitStatus，设置电机限位是否使能
 	  @param    sAxis	电机轴号
 	  @param    bStatus	使能状态（1：使能；0：失能）
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE setLimitStatus(short sAxis, bool bStatus);
@@ -76,7 +76,7 @@ public:
 	/**
 	  @brief    getRunStatus，获取电机运动状态
 	  @param    sAxis	电机轴号
-	  @return   1 运动结束 ；-1 运动中
+	  @return   0 运动中；1 运动结束
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE getRunStatus(short sAxis);
@@ -85,7 +85,7 @@ public:
 	/**
 	  @brief    getPLimitStatus，获取正限位状态
 	  @param    sAxis	电机轴号
-	  @return   -1 未限位； 1 限位
+	  @return   0 未限位； 1 限位
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE getPLimitStatus(short sAxis);
@@ -94,7 +94,7 @@ public:
 	/**
 	  @brief    getPLimitStatus，获取负限位状态
 	  @param    sAxis	电机轴号
-	  @return   -1 未限位； 1 限位
+	  @return   0 未限位； 1 限位
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE getNLimitStatus(short sAxis);
@@ -107,7 +107,7 @@ public:
 	  @param    sAxis	电机轴号
 	  @param    dbVel	运动速度
 	  @param    bDir	运动方向（0 负方向； 1 正方向）
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE singleConstSpeedMove(short sAxis, double dbVel, bool bDir);
@@ -119,7 +119,7 @@ public:
 	  @param    dbVel	运动速度
 	  @param    iPos	运动距离
 	  @param    bDir	运动方向（0 负方向； 1 正方向）
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE singleConstLengthMove(short sAxis, double dbVel, int iPos, bool bDir);
@@ -131,7 +131,7 @@ public:
 	  @param    dbVel	运动速度
 	  @param    iPos	运动距离
 	  @param    bDir	运动方向（0 负方向； 1 正方向）
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE singleConstLengthMoveTo(short sAxis, double dbVel, int iPos, bool bDir);
@@ -140,7 +140,7 @@ public:
 	/**
 	  @brief    singleHome，单轴回零运动
 	  @param    sAxis	电机轴号
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE singleHome(short sAxis);
@@ -149,7 +149,7 @@ public:
 	/**
 	  @brief    singleStop，单轴电机运动停止
 	  @param    sAxis	电机轴号
-	  @return   -1 执行异常； 1 执行正常
+	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE singleStop(short sAxis);
