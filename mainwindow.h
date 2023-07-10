@@ -25,6 +25,7 @@ public:
 
 private slots:
 
+/***************** TCP测试函数 *****************/
 /**
  * @brief  建立tcp连接
  */
@@ -117,7 +118,7 @@ private slots:
  */
     void on_btn_tcpDisconnect_clicked();
 
-
+/***************** PMAC测试函数 *****************/
 /**
  * @brief Pmac 连接
  */
@@ -133,50 +134,92 @@ private slots:
  */
     void on_btn_ioTest_Open_clicked();
 
-
 /**
  * @brief 设置 IO 低电平
  */
 
     void on_btn_ioTest_Close_clicked();
 
+/**
+ * @brief PX定速运动
+ */
+    void on_lbl_motorTest_PX_ConstSpeed_clicked();
+
+/**
+ * @brief PR定速运动
+ */
+    void on_lbl_motorTest_PR_ConstSpeed_clicked();
+
+/**
+ * @brief PZ定速运动
+ */
+    void on_lbl_motorTest_PZ_ConstSpeed_clicked();
+
+/**
+ * @brief PX定长运动
+ */
+    void on_lbl_motorTest_PX_ConstLength_clicked();
+
+/**
+ * @brief PR定长运动
+ */
+    void on_lbl_motorTest_PR_ConstLength_clicked();
+
+/**
+ * @brief PZ定长运动
+ */
+    void on_lbl_motorTest_PZ_ConstLength_clicked();
+
+/**
+ * @brief PX停止运动
+ */
+    void on_lbl_motorTest_PX_Stop_clicked();
+
+/**
+ * @brief PR停止运动
+ */
+    void on_lbl_motorTest_PR_Stop_clicked();
+
+
+/**
+ * @brief PZ停止运动
+ */
+    void on_lbl_motorTest_PZ_Stop_clicked();
+
+/**
+ * @brief 开启监控线程
+ */
+    void on_btn_threadTest_Open_clicked();
+
+/**
+ * @brief PX设置零点
+ */
+    void on_btn_threadTest_PX_SetZero_clicked();
+
+/**
+ * @brief PR设置零点
+ */
+    void on_btn_threadTest_PR_SetZero_clicked();
+
+/**
+ * @brief PZ设置零点
+ */
+    void on_btn_threadTest_PZ_SetZero_clicked();
+
+/**
+ * @brief 使能限位
+ */
+    void on_btn_motorTest_OpenLimit_clicked();
+
+/**
+ * @brief 失能限位
+ */
+    void on_btn_motorTest_CloseLimit_clicked();
 
 /**
  * @brief 测试函数
  */
     void on_pushButton_clicked();
-
-
-    void on_lbl_motorTest_PX_ConstSpeed_clicked();
-
-    void on_lbl_motorTest_PR_ConstSpeed_clicked();
-
-    void on_lbl_motorTest_PZ_ConstSpeed_clicked();
-
-    void on_lbl_motorTest_PX_ConstLength_clicked();
-
-    void on_lbl_motorTest_PR_ConstLength_clicked();
-
-    void on_lbl_motorTest_PZ_ConstLength_clicked();
-
-    void on_lbl_motorTest_PX_Stop_clicked();
-
-    void on_lbl_motorTest_PR_Stop_clicked();
-
-    void on_lbl_motorTest_PZ_Stop_clicked();
-
-    void on_btn_threadTest_Open_clicked();
-
-    void on_btn_threadTest_PX_SetZero_clicked();
-
-    void on_btn_threadTest_PR_SetZero_clicked();
-
-    void on_btn_threadTest_PZ_SetZero_clicked();
-
-
-    void on_btn_motorTest_OpenLimit_clicked();
-
-    void on_btn_motorTest_CloseLimit_clicked();
 
 private:
 /**
@@ -184,6 +227,9 @@ private:
  */
     void setLabelColor(QLabel* label, QString color);
 
+/**
+ * @brief 监控线程函数
+ */
     void th_threadOpen();
 
 private:
@@ -192,10 +238,6 @@ private:
     MotorClass* motorPX;
     MotorClass* motorPZ;
     MotorClass* motorPR;
-
-
-
-
 };
 
 

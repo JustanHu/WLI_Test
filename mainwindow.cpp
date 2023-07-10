@@ -23,13 +23,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    th_threadOpenFlag = TRUE;
     delete pmacDevice;
     delete motorPX;
     delete motorPZ;
     delete motorPR;
-    th_threadOpenFlag = TRUE;
 
     delete WLITest;
+
     delete ui;
 }
 
@@ -318,10 +319,6 @@ void MainWindow::on_btn_Normal_clicked()//设置当前白光为仅仪表控制�
 }
 
 
-
-
-
-
 // Pmac 测试
 void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
 {
@@ -335,7 +332,6 @@ void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
     }
 }
 
-
 void MainWindow::on_btn_pmacTest_Close_clicked() // PMAC 断开按钮
 {
     switch(pmacDevice->devClose()) {
@@ -347,6 +343,7 @@ void MainWindow::on_btn_pmacTest_Close_clicked() // PMAC 断开按钮
         break; }
     }
 }
+
 
 // IO 测试
 void MainWindow::on_btn_ioTest_Open_clicked() // 开 IO 按钮
@@ -375,6 +372,7 @@ void MainWindow::on_btn_ioTest_Close_clicked() // 关 IO 按钮
     }
 }
 
+
 // MOTOR 测试
 void MainWindow::on_lbl_motorTest_PX_ConstSpeed_clicked() // PX轴定速运动
 {
@@ -400,7 +398,6 @@ void MainWindow::on_lbl_motorTest_PZ_ConstSpeed_clicked()   // PZ轴定速运动
     motorPZ->singleConstSpeedMove(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),dir);
 }
 
-
 void MainWindow::on_lbl_motorTest_PX_ConstLength_clicked()  // PX轴定长运动
 {
     int dir = 0;
@@ -412,7 +409,6 @@ void MainWindow::on_lbl_motorTest_PX_ConstLength_clicked()  // PX轴定长运动
     if(ui->cb_motorTest_Relative->isChecked())  // 相对
         motorPX->singleConstLengthMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
 }
-
 
 void MainWindow::on_lbl_motorTest_PR_ConstLength_clicked()  // PR轴定长运动
 {
@@ -426,7 +422,6 @@ void MainWindow::on_lbl_motorTest_PR_ConstLength_clicked()  // PR轴定长运动
         motorPR->singleConstLengthMove(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
 }
 
-
 void MainWindow::on_lbl_motorTest_PZ_ConstLength_clicked()  // PZ轴定长运动
 {
     int dir = 0;
@@ -438,7 +433,6 @@ void MainWindow::on_lbl_motorTest_PZ_ConstLength_clicked()  // PZ轴定长运动
     if(ui->cb_motorTest_Relative->isChecked())  // 相对
         motorPZ->singleConstLengthMove(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
 }
-
 
 void MainWindow::on_lbl_motorTest_PX_Stop_clicked()     // PX轴停止
 {
@@ -455,21 +449,19 @@ void MainWindow::on_lbl_motorTest_PZ_Stop_clicked()     // PZ轴停止
     motorPZ->singleStop(motorPZ->axisNumber);
 }
 
-void MainWindow::on_btn_motorTest_OpenLimit_clicked()    // PX\PR\PZ 开限位
+void MainWindow::on_btn_motorTest_OpenLimit_clicked()   // PX\PR\PZ 开限位
 {
     motorPX->setLimitStatus(motorPX->axisNumber,1);
     motorPR->setLimitStatus(motorPR->axisNumber,1);
     motorPZ->setLimitStatus(motorPZ->axisNumber,1);
 }
 
-
-void MainWindow::on_btn_motorTest_CloseLimit_clicked()    // PX\PR\PZ 关限位
+void MainWindow::on_btn_motorTest_CloseLimit_clicked()  // PX\PR\PZ 关限位
 {
     motorPX->setLimitStatus(motorPX->axisNumber,0);
     motorPR->setLimitStatus(motorPR->axisNumber,0);
     motorPZ->setLimitStatus(motorPZ->axisNumber,0);
 }
-
 
 
 // THREAD 测试
@@ -480,7 +472,7 @@ void MainWindow::on_btn_threadTest_Open_clicked()       // 开启 PMAC 实时线
     th_threadOpen.join();
 }
 
-void MainWindow::th_threadOpen()
+void MainWindow::th_threadOpen()                        //  PMAC 实时线程函数
 {
     double value;
     while(!th_threadOpenFlag)
@@ -525,39 +517,23 @@ void MainWindow::th_threadOpen()
     }
 }
 
-
-void MainWindow::on_btn_threadTest_PX_SetZero_clicked()
+void MainWindow::on_btn_threadTest_PX_SetZero_clicked() //  PX轴设置零点
 {
     motorPX->setZeroPoint(motorPZ->axisNumber);
 }
 
-void MainWindow::on_btn_threadTest_PR_SetZero_clicked()
+void MainWindow::on_btn_threadTest_PR_SetZero_clicked() //  PR轴设置零点
 {
     motorPR->setZeroPoint(motorPR->axisNumber);
 }
 
-void MainWindow::on_btn_threadTest_PZ_SetZero_clicked()
+void MainWindow::on_btn_threadTest_PZ_SetZero_clicked() //  PZ轴设置零点
 {
     motorPZ->setZeroPoint(motorPZ->axisNumber);
 }
 
 
-
-
-
-void MainWindow::on_pushButton_clicked()
-{
-    setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
-}
-
-
-
-
-
-
-
-
-void MainWindow::setLabelColor(QLabel* label, QString color)
+void MainWindow::setLabelColor(QLabel* label, QString color)    //  设置Label颜色
 {
     const QString SheetStyle =
            "min-width:14px;         \
@@ -576,7 +552,10 @@ void MainWindow::setLabelColor(QLabel* label, QString color)
 
 
 
-
+void MainWindow::on_pushButton_clicked()
+{
+    setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
+}
 
 
 

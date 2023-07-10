@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
+    <width>387</width>
     <height>700</height>
    </rect>
   </property>
@@ -37,7 +37,7 @@
      <rect>
       <x>-5</x>
       <y>-2</y>
-      <width>391</width>
+      <width>431</width>
       <height>800</height>
      </rect>
     </property>
@@ -2272,7 +2272,7 @@ QPushButton:pressed {
         <string>关限位</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -2313,7 +2313,7 @@ QPushButton:pressed {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>20</x>
