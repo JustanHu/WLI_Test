@@ -2296,6 +2296,9 @@ QPushButton:pressed {
           <property name="checked">
            <bool>true</bool>
           </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -2308,6 +2311,9 @@ QPushButton:pressed {
           </property>
           <property name="text">
            <string>反转</string>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -2337,6 +2343,9 @@ QPushButton:pressed {
           <property name="checked">
            <bool>true</bool>
           </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -2349,6 +2358,9 @@ QPushButton:pressed {
           </property>
           <property name="text">
            <string>绝对</string>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

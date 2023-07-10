@@ -1,18 +1,18 @@
 [PX]
-axisNumber = 1
-initSpeed = 20
-homeSpeed = 10
-rev = 10000
+axisNumber = 5
+initSpeed = 1
+homeSpeed = 1
+rev = 1
 [PZ]
-axisNumber = 2
-initSpeed = 15
-homeSpeed = 10
-rev = 9000
+axisNumber = 6
+initSpeed = 1
+homeSpeed = 1
+rev = 1
 [PR]
-axisNumber = 3
-initSpeed = 20
-homeSpeed = 10
-rev = 8000
+axisNumber = 7
+initSpeed = 1
+homeSpeed = 1
+rev = 1
 [SX]
 axisNumber = 4
 initSpeed = 20
