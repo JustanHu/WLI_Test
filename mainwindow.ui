@@ -1625,6 +1625,9 @@ QPushButton:pressed {
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
+          <property name="minimum">
+           <double>-5.000000000000000</double>
+          </property>
           <property name="maximum">
            <double>30.000000000000000</double>
           </property>
@@ -2211,7 +2214,7 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_motorTest_OpenLimit">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>55</x>
          <y>230</y>
          <width>61</width>
          <height>21</height>
@@ -2243,7 +2246,7 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_motorTest_CloseLimit">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>55</x>
          <y>260</y>
          <width>61</width>
          <height>21</height>

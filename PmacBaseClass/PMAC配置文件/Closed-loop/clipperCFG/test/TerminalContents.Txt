@@ -1,0 +1,10 @@
+Unable to communicate.
+Press Enter/Return to send command to PMAC.
+#4j+
+^G
+ERR018
+Illegal Motor Enable because of PHASING ERROR or is PHASING
+#1j+
+^G
+ERR018
+Illegal Motor Enable because of PHASING ERROR or is PHASING

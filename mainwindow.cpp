@@ -19,6 +19,17 @@ MainWindow::MainWindow(QWidget *parent)
     motorPX = new MotorClass("PX");
     motorPZ = new MotorClass("PZ");
     motorPR = new MotorClass("PR");
+
+    ui->spb_motorTest_PX_InitSpeed->setValue(motorPX->initSpeed);
+    ui->spb_motorTest_PZ_InitSpeed->setValue(motorPZ->initSpeed);
+    ui->spb_motorTest_PR_InitSpeed->setValue(motorPR->initSpeed);
+
+    ui->spb_motorTest_PX_HomeSpeed->setValue(motorPX->homeSpeed);
+    ui->spb_motorTest_PZ_HomeSpeed->setValue(motorPZ->homeSpeed);
+    ui->spb_motorTest_PR_HomeSpeed->setValue(motorPR->homeSpeed);
+
+
+
 }
 
 MainWindow::~MainWindow()
@@ -378,8 +389,17 @@ void MainWindow::on_btn_ioTest_Close_clicked() // 关 IO 按钮
 void MainWindow::on_lbl_motorTest_PX_ConstSpeed_clicked() // PX轴定速运动
 {
     int dir = 0;
-    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
-    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
+    if(ui->cb_motorTest_Forward->isChecked())
+    {
+        dir = 1;    // 正转
+        qDebug() << "1111";
+    }
+
+    if(ui->cb_motorTest_Reversal->isChecked())
+    {
+        dir = 0;    // 反转
+        qDebug() << "2222";
+    }
     motorPX->singleConstSpeedMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),dir);
 }
 
