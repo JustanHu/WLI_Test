@@ -13,6 +13,11 @@
 #endif
 
 
+extern long		testInterface, dwDevice;
+extern BOOL		pbSuccess;
+extern BOOL		pbDriverOpen;
+extern IPmacDevice* pmacDevice;
+
 class EXPORT_CLASS PmacClass
 {
 public:
@@ -58,12 +63,9 @@ public:
 	 /*--------------------------------------------------------------------------*/
 	BYTE getIOStatus(short sPin);
 
-
 public:
-	long			testInterface, dwDevice;
-	BOOL			pbSuccess;
-	static BOOL		pbDriverOpen;
-	IPmacDevice*	pmacDevice;
+
+
 };
 
 #endif

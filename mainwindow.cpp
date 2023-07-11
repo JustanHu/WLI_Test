@@ -16,9 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // 创建pmac对象和电机对象
     pmacDevice = new PmacClass();
-    motorPX = new MotorClass(pmacDevice,"PX");
-    motorPZ = new MotorClass(pmacDevice,"PZ");
-    motorPR = new MotorClass(pmacDevice,"PR");
+    motorPX = new MotorClass("PX");
+    motorPZ = new MotorClass("PZ");
+    motorPR = new MotorClass("PR");
 }
 
 MainWindow::~MainWindow()
@@ -322,6 +322,7 @@ void MainWindow::on_btn_Normal_clicked()//设置当前白光为仅仪表控制�
 // Pmac 测试
 void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
 {
+    pmacDevice->devInit();
     switch(pmacDevice->devInit()) {
     case -1: {
         ui->statusbar->showMessage("Pmac Connect Failed!");

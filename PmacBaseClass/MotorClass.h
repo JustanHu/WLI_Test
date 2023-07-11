@@ -7,7 +7,7 @@ using namespace std;
 class EXPORT_CLASS MotorClass
 {
 public:
-	MotorClass(PmacClass* pmac, string motorName);
+	MotorClass(string motorName);
 	virtual ~MotorClass();
 
 public:
@@ -159,10 +159,6 @@ public:
 	int		initSpeed;		// 初始速度
 	int		homeSpeed;		// 回零速度
 	double	rev;			// 分辨率
-
-private:
-	PmacClass* ptrDevice;
-
 
 };
 
