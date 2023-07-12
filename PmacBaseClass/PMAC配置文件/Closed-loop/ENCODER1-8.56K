@@ -1,0 +1,20 @@
+; Created by PMAC Win32 Driver from:C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\ENCODER1-8.pmc
+;
+;C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\ENCODER1-8.pmc
+I7010=5;5
+I7020=5;6
+I7030=5;7
+I7040=5;8
+I7110=5;9
+I7210=5;10
+I7310=5;11
+I7410=5;12
+I7018=0;15
+I7028=0;16
+I7038=0;17
+I7048=0;18
+I7118=0;19
+I7218=0;20
+I7318=0;21
+I7418=0;22
+CLOSE

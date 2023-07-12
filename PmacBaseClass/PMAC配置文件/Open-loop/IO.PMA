@@ -1,0 +1,11 @@
+; Created by PMAC Win32 Driver from:C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Open-loop\IO.pmc
+;
+;C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Open-loop\IO.pmc
+OPEN PLC1 CLEAR;1
+M32=$FF;2
+M34=$0;3
+M40=$FF00;4
+M42=$FFFF;5
+DIS PLC1;6
+CLOSE;7
+CLOSE

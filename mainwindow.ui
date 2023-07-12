@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>387</width>
+    <width>586</width>
     <height>700</height>
    </rect>
   </property>
@@ -1463,9 +1463,9 @@ QPushButton:pressed {
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>20</y>
+         <y>30</y>
          <width>311</width>
-         <height>141</height>
+         <height>121</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gL_motorTest">
@@ -1624,9 +1624,6 @@ QPushButton:pressed {
           </property>
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
-          </property>
-          <property name="minimum">
-           <double>-5.000000000000000</double>
           </property>
           <property name="maximum">
            <double>30.000000000000000</double>
@@ -1837,385 +1834,11 @@ QPushButton:pressed {
         </item>
        </layout>
       </widget>
-      <widget class="QSplitter" name="spl_motorTest4">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>170</y>
-         <width>201</width>
-         <height>111</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="handleWidth">
-        <number>15</number>
-       </property>
-       <widget class="QWidget" name="verticalLayoutWidget">
-        <layout class="QVBoxLayout" name="vL_motorTest1">
-         <property name="spacing">
-          <number>7</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QSplitter" name="spl_motorTest1">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="handleWidth">
-            <number>6</number>
-           </property>
-           <widget class="QPushButton" name="lbl_motorTest_PX_ConstSpeed">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>定速</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PX_ConstLength">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>定长</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PX_Stop">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>STOP</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PX_Home">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>Home</string>
-            </property>
-           </widget>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="verticalLayoutWidget_2">
-        <layout class="QVBoxLayout" name="vL_motorTest2">
-         <property name="spacing">
-          <number>7</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QSplitter" name="spl_motorTest2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="handleWidth">
-            <number>6</number>
-           </property>
-           <widget class="QPushButton" name="lbl_motorTest_PR_ConstSpeed">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>定速</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PR_ConstLength">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>定长</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PR_Stop">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>STOP</string>
-            </property>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="lbl_motorTest_PR_Home">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-           </property>
-           <property name="text">
-            <string>Home</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="verticalLayoutWidget_3">
-        <layout class="QVBoxLayout" name="vL_motorTest3">
-         <property name="spacing">
-          <number>7</number>
-         </property>
-         <property name="leftMargin">
-          <number>3</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QSplitter" name="spl_motorTest3">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="handleWidth">
-            <number>6</number>
-           </property>
-           <widget class="QPushButton" name="lbl_motorTest_PZ_ConstSpeed">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>定速</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PZ_ConstLength">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>定长</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="lbl_motorTest_PZ_Stop">
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-            </property>
-            <property name="text">
-             <string>STOP</string>
-            </property>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="lbl_motorTest_PZ_Home">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #848484;
-    color: white;
-    border: 1px solid #848484;
-    border-radius: 4px;
-    padding: 2px 4px;
-    font: 700 7pt &quot;微软雅黑&quot;;
-}
-
-QPushButton:hover {
-    background-color: #636363;
-}
-
-QPushButton:pressed {
-    background-color: #424242;
-}
-</string>
-           </property>
-           <property name="text">
-            <string>Home</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
       <widget class="QPushButton" name="btn_motorTest_OpenLimit">
        <property name="geometry">
         <rect>
-         <x>55</x>
-         <y>230</y>
+         <x>40</x>
+         <y>220</y>
          <width>61</width>
          <height>21</height>
         </rect>
@@ -2246,8 +1869,8 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_motorTest_CloseLimit">
        <property name="geometry">
         <rect>
-         <x>55</x>
-         <y>260</y>
+         <x>40</x>
+         <y>250</y>
          <width>61</width>
          <height>21</height>
         </rect>
@@ -2278,8 +1901,8 @@ QPushButton:pressed {
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>170</y>
+         <x>0</x>
+         <y>160</y>
          <width>115</width>
          <height>24</height>
         </rect>
@@ -2325,8 +1948,8 @@ QPushButton:pressed {
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>200</y>
+         <x>0</x>
+         <y>190</y>
          <width>115</width>
          <height>24</height>
         </rect>
@@ -2369,8 +1992,389 @@ QPushButton:pressed {
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>160</y>
+         <width>61</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="vL_motorTest2">
+        <item>
+         <widget class="QSplitter" name="spl_motorTest2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="opaqueResize">
+           <bool>true</bool>
+          </property>
+          <property name="handleWidth">
+           <number>10</number>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
+          </property>
+          <widget class="QPushButton" name="lbl_motorTest_PR_ConstSpeed">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>定速</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PR_ConstLength">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>定长</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PR_Stop">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>STOP</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PR_Home">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Home</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>160</y>
+         <width>61</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="vL_motorTest3">
+        <item>
+         <widget class="QSplitter" name="spl_motorTest3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="opaqueResize">
+           <bool>true</bool>
+          </property>
+          <property name="handleWidth">
+           <number>10</number>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
+          </property>
+          <widget class="QPushButton" name="lbl_motorTest_PZ_ConstSpeed">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>定速</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PZ_ConstLength">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>定长</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PZ_Stop">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>STOP</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PZ_Home">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Home</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>160</y>
+         <width>61</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="vL_motorTest1">
+        <property name="spacing">
+         <number>7</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="spl_motorTest1">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="opaqueResize">
+           <bool>true</bool>
+          </property>
+          <property name="handleWidth">
+           <number>10</number>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
+          </property>
+          <widget class="QPushButton" name="lbl_motorTest_PX_ConstSpeed">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>定速</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PX_ConstLength">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>定长</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PX_Stop">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>STOP</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="lbl_motorTest_PX_Home">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Home</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
-     <widget class="QWidget" name="wd_pmacTest_3" native="true">
+     <widget class="QWidget" name="wd_threadTest" native="true">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -2404,7 +2408,7 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_Open">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>10</x>
          <y>30</y>
          <width>61</width>
          <height>21</height>
@@ -2436,15 +2440,15 @@ QPushButton:pressed {
       <widget class="QWidget" name="horizontalLayoutWidget_3">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>50</y>
-         <width>301</width>
+         <width>335</width>
          <height>51</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="hL_threadTest1">
         <property name="rightMargin">
-         <number>31</number>
+         <number>35</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest1">
@@ -2452,7 +2456,7 @@ QPushButton:pressed {
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="handleWidth">
-           <number>17</number>
+           <number>30</number>
           </property>
           <widget class="QLabel" name="lbl_threadTest_Axis">
            <property name="styleSheet">
@@ -2534,9 +2538,9 @@ QPushButton:pressed {
       <widget class="QWidget" name="horizontalLayoutWidget_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>140</y>
-         <width>301</width>
+         <width>331</width>
          <height>41</height>
         </rect>
        </property>
@@ -2545,7 +2549,7 @@ QPushButton:pressed {
          <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>25</number>
+         <number>20</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest3">
@@ -2553,9 +2557,15 @@ QPushButton:pressed {
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="handleWidth">
-           <number>31</number>
+           <number>40</number>
           </property>
           <widget class="QLabel" name="lbl_threadTest_PR">
+           <property name="maximumSize">
+            <size>
+             <width>21</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
@@ -2566,7 +2576,7 @@ QPushButton:pressed {
             <string>PR</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PR_PLimit">
@@ -2611,6 +2621,12 @@ background: #FF4040;
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PR_Pos">
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
@@ -2621,10 +2637,16 @@ background: #FF4040;
             <string>100</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PR_Vel">
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
@@ -2635,7 +2657,7 @@ background: #FF4040;
             <string>20</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </widget>
@@ -2645,9 +2667,9 @@ background: #FF4040;
       <widget class="QWidget" name="horizontalLayoutWidget_4">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>180</y>
-         <width>301</width>
+         <width>331</width>
          <height>41</height>
         </rect>
        </property>
@@ -2656,7 +2678,7 @@ background: #FF4040;
          <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>25</number>
+         <number>20</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest4">
@@ -2664,9 +2686,15 @@ background: #FF4040;
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="handleWidth">
-           <number>31</number>
+           <number>40</number>
           </property>
           <widget class="QLabel" name="lbl_threadTest_PZ">
+           <property name="maximumSize">
+            <size>
+             <width>21</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
@@ -2677,7 +2705,7 @@ background: #FF4040;
             <string>PZ</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PZ_PLimit">
@@ -2722,6 +2750,12 @@ background: #FF4040;
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PZ_Pos">
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
@@ -2732,10 +2766,16 @@ background: #FF4040;
             <string>100</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PZ_Vel">
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
@@ -2746,7 +2786,7 @@ background: #FF4040;
             <string>20</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </widget>
@@ -2756,9 +2796,9 @@ background: #FF4040;
       <widget class="QWidget" name="horizontalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>100</y>
-         <width>301</width>
+         <width>332</width>
          <height>41</height>
         </rect>
        </property>
@@ -2767,7 +2807,7 @@ background: #FF4040;
          <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>25</number>
+         <number>20</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest2">
@@ -2775,7 +2815,7 @@ background: #FF4040;
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="handleWidth">
-           <number>31</number>
+           <number>40</number>
           </property>
           <widget class="QLabel" name="lbl_threadTest_PX">
            <property name="styleSheet">
@@ -2833,6 +2873,12 @@ background: #FF4040;
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PX_Pos">
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>微软雅黑</family>
@@ -2851,10 +2897,16 @@ background: #FF4040;
             <string>100</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PX_Vel">
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>微软雅黑</family>
@@ -2873,7 +2925,7 @@ background: #FF4040;
             <string>20</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </widget>
@@ -2883,9 +2935,9 @@ background: #FF4040;
       <widget class="QPushButton" name="btn_threadTest_PR_SetZero">
        <property name="geometry">
         <rect>
-         <x>300</x>
+         <x>310</x>
          <y>150</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2915,9 +2967,9 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_PZ_SetZero">
        <property name="geometry">
         <rect>
-         <x>300</x>
+         <x>310</x>
          <y>190</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2947,9 +2999,9 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_threadTest_PX_SetZero">
        <property name="geometry">
         <rect>
-         <x>300</x>
+         <x>310</x>
          <y>110</y>
-         <width>61</width>
+         <width>51</width>
          <height>21</height>
         </rect>
        </property>
@@ -2974,6 +3026,38 @@ QPushButton:pressed {
        </property>
        <property name="text">
         <string>设置零点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_threadTest_Close">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #848484;
+    color: white;
+    border: 1px solid #848484;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font: 700 7pt &quot;微软雅黑&quot;;
+}
+
+QPushButton:hover {
+    background-color: #636363;
+}
+
+QPushButton:pressed {
+    background-color: #424242;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>关闭监控</string>
        </property>
       </widget>
      </widget>
@@ -3168,7 +3252,7 @@ background: #FF4040;
         <rect>
          <x>45</x>
          <y>15</y>
-         <width>111</width>
+         <width>121</width>
          <height>20</height>
         </rect>
        </property>
@@ -3180,7 +3264,7 @@ background: #FF4040;
 }</string>
        </property>
        <property name="text">
-        <string>M1     M2     M3</string>
+        <string>M1         M2         M3</string>
        </property>
       </widget>
      </widget>

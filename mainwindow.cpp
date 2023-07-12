@@ -6,6 +6,7 @@
 
 using namespace std;
 static bool th_threadOpenFlag = FALSE;
+static bool th_keepGuiAwakeFlag = FALSE;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -29,16 +30,21 @@ MainWindow::MainWindow(QWidget *parent)
     ui->spb_motorTest_PR_HomeSpeed->setValue(motorPR->homeSpeed);
 
 
-
+//    keepGuiAwake();
 }
 
 MainWindow::~MainWindow()
 {
     th_threadOpenFlag = TRUE;
+    th_keepGuiAwakeFlag = TRUE;
+    motorPX->singleStop(motorPX->axisNumber);
+    motorPZ->singleStop(motorPZ->axisNumber);
+    motorPR->singleStop(motorPR->axisNumber);
     delete pmacDevice;
     delete motorPX;
     delete motorPZ;
     delete motorPR;
+    delete thread777;
 
     delete WLITest;
 
@@ -335,7 +341,7 @@ void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
 {
     pmacDevice->devInit();
     switch(pmacDevice->devInit()) {
-    case -1: {
+    case 0: {
         ui->statusbar->showMessage("Pmac Connect Failed!");
         break; }
     case 1: {
@@ -347,7 +353,7 @@ void MainWindow::on_btn_pmacTest_Connect_clicked() // PMAC 连接按钮
 void MainWindow::on_btn_pmacTest_Close_clicked() // PMAC 断开按钮
 {
     switch(pmacDevice->devClose()) {
-    case -1: {
+    case 0: {
         ui->statusbar->showMessage("Pmac Close Failed!");
         break; }
     case 1: {
@@ -360,28 +366,30 @@ void MainWindow::on_btn_pmacTest_Close_clicked() // PMAC 断开按钮
 // IO 测试
 void MainWindow::on_btn_ioTest_Open_clicked() // 开 IO 按钮
 {
-    switch(pmacDevice->setIOStatus(1,0)) { // M1 高电平
-    case -1: {
-        ui->statusbar->showMessage("Pmac Set IO Failed!");
-        break; }
-    case 1: {
-        ui->statusbar->showMessage("Pmac Set IO Successed!");
+    if(pmacDevice->setIOStatus(1,1) && pmacDevice->setIOStatus(2,1) && pmacDevice->setIOStatus(3,1))    // M1 2 3 高电平
+    {
+        ui->statusbar->showMessage("Pmac Set IO M1M2M3 Successed!");
         setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
-        break; }
+        setLabelColor(ui->lbl_ioTest_M2,QString("#76EE00"));
+        setLabelColor(ui->lbl_ioTest_M3,QString("#76EE00"));
     }
+    else
+        ui->statusbar->showMessage("Pmac Set IO M1M2M3 Failed!");
 }
 
 void MainWindow::on_btn_ioTest_Close_clicked() // 关 IO 按钮
 {
-    switch(pmacDevice->setIOStatus(1,1)) { // M1 低电平
-    case -1: {
-        ui->statusbar->showMessage("Pmac Set IO Failed!");
-        break; }
-    case 1: {
-        ui->statusbar->showMessage("Pmac Set IO Successed!");
-        setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
-        break; }
+
+    if(pmacDevice->setIOStatus(1,0) && pmacDevice->setIOStatus(2,0) && pmacDevice->setIOStatus(3,0))    // M1 2 3 低电平
+    {
+        ui->statusbar->showMessage("Pmac Close IO M1M2M3 Successed!");
+        setLabelColor(ui->lbl_ioTest_M1,QString("#FF4040"));
+        setLabelColor(ui->lbl_ioTest_M2,QString("#FF4040"));
+        setLabelColor(ui->lbl_ioTest_M3,QString("#FF4040"));
     }
+    else
+        ui->statusbar->showMessage("Pmac Close IO M1M2M3 Failed!");
+
 }
 
 
@@ -389,17 +397,9 @@ void MainWindow::on_btn_ioTest_Close_clicked() // 关 IO 按钮
 void MainWindow::on_lbl_motorTest_PX_ConstSpeed_clicked() // PX轴定速运动
 {
     int dir = 0;
-    if(ui->cb_motorTest_Forward->isChecked())
-    {
-        dir = 1;    // 正转
-        qDebug() << "1111";
-    }
+    if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
+    if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
 
-    if(ui->cb_motorTest_Reversal->isChecked())
-    {
-        dir = 0;    // 反转
-        qDebug() << "2222";
-    }
     motorPX->singleConstSpeedMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),dir);
 }
 
@@ -488,14 +488,16 @@ void MainWindow::on_btn_motorTest_CloseLimit_clicked()  // PX\PR\PZ 关限位
 // THREAD 测试
 void MainWindow::on_btn_threadTest_Open_clicked()       // 开启 PMAC 实时线程
 {
+    th_threadOpenFlag = FALSE;
     std::thread th_threadOpen (&MainWindow::th_threadOpen,this);
     std::cout << "th_threadOpen ID:" << th_threadOpen.get_id() << std::endl;
-    th_threadOpen.join();
+    th_threadOpen.detach();
 }
 
 void MainWindow::th_threadOpen()                        //  PMAC 实时线程函数
 {
     double value;
+    CoInitialize(NULL);
     while(!th_threadOpenFlag)
     {
         // 读取位置
@@ -519,28 +521,50 @@ void MainWindow::th_threadOpen()                        //  PMAC 实时线程函
         ui->lbl_threadTest_PZ_Vel->setText(QString::number(value, 'f', 2));
 
         // 读取IO
-        if(!pmacDevice->getIOStatus(1))     // 高电平
+        if(pmacDevice->getIOStatus(1))     // 高电平
             setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
         else                                // 低电平
             setLabelColor(ui->lbl_ioTest_M1,QString("#FF4040"));
 
-        if(!pmacDevice->getIOStatus(2))     // 高电平
+        if(pmacDevice->getIOStatus(2))     // 高电平
             setLabelColor(ui->lbl_ioTest_M2,QString("#76EE00"));
         else                                // 低电平
             setLabelColor(ui->lbl_ioTest_M2,QString("#FF4040"));
 
-        if(!pmacDevice->getIOStatus(3))     // 高电平
+        if(pmacDevice->getIOStatus(3))     // 高电平
             setLabelColor(ui->lbl_ioTest_M3,QString("#76EE00"));
         else                                // 低电平
             setLabelColor(ui->lbl_ioTest_M3,QString("#FF4040"));
 
-        this_thread::sleep_for(std::chrono::milliseconds(50));
+        // 读取限位
+        if(motorPX->getNLimitStatus(motorPX->axisNumber))       // 限位
+            setLabelColor(ui->lbl_threadTest_PX_PLimit,QString("#76EE00"));
+        else                                                    // 未限位
+            setLabelColor(ui->lbl_threadTest_PX_PLimit,QString("#FF4040"));
+
+        if(motorPZ->getNLimitStatus(motorPZ->axisNumber))       // 限位
+            setLabelColor(ui->lbl_threadTest_PZ_PLimit,QString("#76EE00"));
+        else                                                    // 未限位
+            setLabelColor(ui->lbl_threadTest_PZ_PLimit,QString("#FF4040"));
+
+        if(motorPR->getNLimitStatus(motorPR->axisNumber))       // 限位
+            setLabelColor(ui->lbl_threadTest_PR_PLimit,QString("#76EE00"));
+        else                                                    // 未限位
+            setLabelColor(ui->lbl_threadTest_PR_PLimit,QString("#FF4040"));
+
+        this_thread::sleep_for(std::chrono::milliseconds(200));
     }
+    CoUninitialize();
+}
+
+void MainWindow::on_btn_threadTest_Close_clicked()
+{
+    th_threadOpenFlag = TRUE;
 }
 
 void MainWindow::on_btn_threadTest_PX_SetZero_clicked() //  PX轴设置零点
 {
-    motorPX->setZeroPoint(motorPZ->axisNumber);
+    motorPX->setZeroPoint(motorPX->axisNumber);
 }
 
 void MainWindow::on_btn_threadTest_PR_SetZero_clicked() //  PR轴设置零点
@@ -554,7 +578,26 @@ void MainWindow::on_btn_threadTest_PZ_SetZero_clicked() //  PZ轴设置零点
 }
 
 
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
 void MainWindow::setLabelColor(QLabel* label, QString color)    //  设置Label颜色
+{
+    const QString SheetStyle =
+           "min-width:14px;         \
+            min-height:14px;        \
+            max-width:14px;         \
+            max-height:14px;        \
+            border-radius:9px;      \
+            border:2px solid gray;  \
+            background:" + color;
+    label->setStyleSheet(SheetStyle);
+}
+void Worker::setLabelColor(QLabel* label, QString color)    //  设置Label颜色
 {
     const QString SheetStyle =
            "min-width:14px;         \
@@ -568,15 +611,32 @@ void MainWindow::setLabelColor(QLabel* label, QString color)    //  设置Label�
 }
 
 
+void MainWindow::keepGuiAwake()       // 开启刷新 GUI 线程
+{
+    th_keepGuiAwakeFlag = FALSE;
+    std::thread th_keepGuiAwake (&MainWindow::th_keepGuiAwake,this);
+    std::cout << "th_keepGuiAwake ID:" << th_keepGuiAwake.get_id() << std::endl;
+    th_keepGuiAwake.detach();
+}
 
-
-
-
+void MainWindow::th_keepGuiAwake()       // 刷新 GUI 线程
+{
+    while(!th_keepGuiAwakeFlag)
+    {
+        QCoreApplication::processEvents();
+        Sleep(500);
+    }
+}
 
 void MainWindow::on_pushButton_clicked()
 {
-    setLabelColor(ui->lbl_ioTest_M1,QString("#76EE00"));
+    //pmacDevice->getIOStatus(3);
+//    motorPX->getVelStatus(motorPX->axisNumber);
+    thread777 = new Controller(pmacDevice,motorPX,motorPR,motorPZ,ui->lbl_threadTest_PX_Pos,ui->lbl_threadTest_PR_Pos,ui->lbl_threadTest_PZ_Pos,ui->lbl_threadTest_PX_Vel,\
+                               ui->lbl_threadTest_PR_Vel,ui->lbl_threadTest_PZ_Vel,ui->lbl_ioTest_M1,ui->lbl_ioTest_M2,ui->lbl_ioTest_M3,ui->lbl_threadTest_PX_PLimit,\
+                               ui->lbl_threadTest_PR_PLimit,ui->lbl_threadTest_PZ_PLimit);
 }
+
 
 
 

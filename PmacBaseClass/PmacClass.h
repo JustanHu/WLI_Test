@@ -48,7 +48,7 @@ public:
 	/**
 	  @brief    setIOStatus，设置电机IO电平
 	  @param    sPin	IO引脚
-	  @param    bStatus	使能状态（1：低电平；0：高电平）
+	  @param    bStatus	使能状态（0：低电平；1：高电平）
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
@@ -58,7 +58,7 @@ public:
 	/**
 	  @brief    getIOStatus，获取IO状态
 	  @param    sPin	IO引脚
-	  @return   0 高电平； 1 低电平
+	  @return   1 高电平； 0 低电平
 	 */
 	 /*--------------------------------------------------------------------------*/
 	BYTE getIOStatus(short sPin);
