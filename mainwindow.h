@@ -355,6 +355,12 @@ private slots:
 
     void on_btn_threadTest_Close_clicked();
 
+    void on_lbl_motorTest_PX_Home_clicked();
+
+    void on_lbl_motorTest_PR_Home_clicked();
+
+    void on_lbl_motorTest_PZ_Home_clicked();
+
 private:
 /**
  * @brief 设置 Label 状态灯颜色

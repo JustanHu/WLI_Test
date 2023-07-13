@@ -29,8 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->spb_motorTest_PZ_HomeSpeed->setValue(motorPZ->homeSpeed);
     ui->spb_motorTest_PR_HomeSpeed->setValue(motorPR->homeSpeed);
 
-
-//    keepGuiAwake();
+    Qt::WindowFlags m_flags = windowFlags();
+    setWindowFlags(m_flags | Qt::WindowStaysOnTopHint);
+    keepGuiAwake();
 }
 
 MainWindow::~MainWindow()
@@ -631,10 +632,10 @@ void MainWindow::th_keepGuiAwake()       // 刷新 GUI 线程
 void MainWindow::on_pushButton_clicked()
 {
     //pmacDevice->getIOStatus(3);
-//    motorPX->getVelStatus(motorPX->axisNumber);
-    thread777 = new Controller(pmacDevice,motorPX,motorPR,motorPZ,ui->lbl_threadTest_PX_Pos,ui->lbl_threadTest_PR_Pos,ui->lbl_threadTest_PZ_Pos,ui->lbl_threadTest_PX_Vel,\
-                               ui->lbl_threadTest_PR_Vel,ui->lbl_threadTest_PZ_Vel,ui->lbl_ioTest_M1,ui->lbl_ioTest_M2,ui->lbl_ioTest_M3,ui->lbl_threadTest_PX_PLimit,\
-                               ui->lbl_threadTest_PR_PLimit,ui->lbl_threadTest_PZ_PLimit);
+    motorPX->getVelStatus(motorPX->axisNumber);
+//    thread777 = new Controller(pmacDevice,motorPX,motorPR,motorPZ,ui->lbl_threadTest_PX_Pos,ui->lbl_threadTest_PR_Pos,ui->lbl_threadTest_PZ_Pos,ui->lbl_threadTest_PX_Vel,\
+//                               ui->lbl_threadTest_PR_Vel,ui->lbl_threadTest_PZ_Vel,ui->lbl_ioTest_M1,ui->lbl_ioTest_M2,ui->lbl_ioTest_M3,ui->lbl_threadTest_PX_PLimit,\
+//                               ui->lbl_threadTest_PR_PLimit,ui->lbl_threadTest_PZ_PLimit);
 }
 
 
@@ -642,8 +643,20 @@ void MainWindow::on_pushButton_clicked()
 
 
 
+void MainWindow::on_lbl_motorTest_PX_Home_clicked()
+{
+    motorPX->singleHome();
+}
 
 
+void MainWindow::on_lbl_motorTest_PR_Home_clicked()
+{
+    motorPR->singleHome();
+}
 
 
+void MainWindow::on_lbl_motorTest_PZ_Home_clicked()
+{
+    motorPZ->singleHome();
+}
 
