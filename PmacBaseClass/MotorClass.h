@@ -156,6 +156,7 @@ public:
 
 private:
 	char* get16String(unsigned long num);
+	void errorWarning(long errorNumber);
 
 public:
 	short	axisNumber;		// ÷·∫≈
