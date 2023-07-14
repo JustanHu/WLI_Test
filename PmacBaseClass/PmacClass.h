@@ -63,7 +63,8 @@ public:
 	 /*--------------------------------------------------------------------------*/
 	BYTE getIOStatus(short sPin);
 
-public:
+private:
+	char get16String(unsigned long num);
 
 
 };

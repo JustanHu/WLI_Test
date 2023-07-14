@@ -38,9 +38,9 @@ MainWindow::~MainWindow()
 {
     th_threadOpenFlag = TRUE;
     th_keepGuiAwakeFlag = TRUE;
-    motorPX->singleStop(motorPX->axisNumber);
-    motorPZ->singleStop(motorPZ->axisNumber);
-    motorPR->singleStop(motorPR->axisNumber);
+    motorPX->singleStop();
+    motorPZ->singleStop();
+    motorPR->singleStop();
     delete pmacDevice;
     delete motorPX;
     delete motorPZ;
@@ -401,7 +401,7 @@ void MainWindow::on_lbl_motorTest_PX_ConstSpeed_clicked() // PX轴定速运动
     if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
     if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
 
-    motorPX->singleConstSpeedMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),dir);
+    motorPX->singleConstSpeedMove(ui->spb_motorTest_PX_InitSpeed->value(),dir);
 }
 
 void MainWindow::on_lbl_motorTest_PR_ConstSpeed_clicked()   // PR轴定速运动
@@ -409,7 +409,7 @@ void MainWindow::on_lbl_motorTest_PR_ConstSpeed_clicked()   // PR轴定速运动
     int dir = 0;
     if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
     if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
-    motorPR->singleConstSpeedMove(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),dir);
+    motorPR->singleConstSpeedMove(ui->spb_motorTest_PR_InitSpeed->value(),dir);
 }
 
 void MainWindow::on_lbl_motorTest_PZ_ConstSpeed_clicked()   // PZ轴定速运动
@@ -417,7 +417,7 @@ void MainWindow::on_lbl_motorTest_PZ_ConstSpeed_clicked()   // PZ轴定速运动
     int dir = 0;
     if(ui->cb_motorTest_Forward->isChecked())   dir = 1;    // 正转
     if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
-    motorPZ->singleConstSpeedMove(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),dir);
+    motorPZ->singleConstSpeedMove(ui->spb_motorTest_PZ_InitSpeed->value(),dir);
 }
 
 void MainWindow::on_lbl_motorTest_PX_ConstLength_clicked()  // PX轴定长运动
@@ -427,9 +427,9 @@ void MainWindow::on_lbl_motorTest_PX_ConstLength_clicked()  // PX轴定长运动
     if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
 
     if(ui->cb_motorTest_Absolute->isChecked())  // 绝对
-        motorPX->singleConstLengthMoveTo(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
+        motorPX->singleConstLengthMoveTo(ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
     if(ui->cb_motorTest_Relative->isChecked())  // 相对
-        motorPX->singleConstLengthMove(motorPX->axisNumber,ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
+        motorPX->singleConstLengthMove(ui->spb_motorTest_PX_InitSpeed->value(),ui->spb_motorTest_PX_MovDis->value(),dir);
 }
 
 void MainWindow::on_lbl_motorTest_PR_ConstLength_clicked()  // PR轴定长运动
@@ -439,9 +439,9 @@ void MainWindow::on_lbl_motorTest_PR_ConstLength_clicked()  // PR轴定长运动
     if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
 
     if(ui->cb_motorTest_Absolute->isChecked())  // 绝对
-        motorPR->singleConstLengthMoveTo(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
+        motorPR->singleConstLengthMoveTo(ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
     if(ui->cb_motorTest_Relative->isChecked())  // 相对
-        motorPR->singleConstLengthMove(motorPR->axisNumber,ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
+        motorPR->singleConstLengthMove(ui->spb_motorTest_PR_InitSpeed->value(),ui->spb_motorTest_PR_MovDis->value(),dir);
 }
 
 void MainWindow::on_lbl_motorTest_PZ_ConstLength_clicked()  // PZ轴定长运动
@@ -451,38 +451,38 @@ void MainWindow::on_lbl_motorTest_PZ_ConstLength_clicked()  // PZ轴定长运动
     if(ui->cb_motorTest_Reversal->isChecked())  dir = 0;    // 反转
 
     if(ui->cb_motorTest_Absolute->isChecked())  // 绝对
-        motorPZ->singleConstLengthMoveTo(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
+        motorPZ->singleConstLengthMoveTo(ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
     if(ui->cb_motorTest_Relative->isChecked())  // 相对
-        motorPZ->singleConstLengthMove(motorPZ->axisNumber,ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
+        motorPZ->singleConstLengthMove(ui->spb_motorTest_PZ_InitSpeed->value(),ui->spb_motorTest_PZ_MovDis->value(),dir);
 }
 
 void MainWindow::on_lbl_motorTest_PX_Stop_clicked()     // PX轴停止
 {
-    motorPX->singleStop(motorPX->axisNumber);
+    motorPX->singleStop();
 }
 
 void MainWindow::on_lbl_motorTest_PR_Stop_clicked()     // PR轴停止
 {
-    motorPR->singleStop(motorPR->axisNumber);
+    motorPR->singleStop();
 }
 
 void MainWindow::on_lbl_motorTest_PZ_Stop_clicked()     // PZ轴停止
 {
-    motorPZ->singleStop(motorPZ->axisNumber);
+    motorPZ->singleStop();
 }
 
 void MainWindow::on_btn_motorTest_OpenLimit_clicked()   // PX\PR\PZ 开限位
 {
-    motorPX->setLimitStatus(motorPX->axisNumber,1);
-    motorPR->setLimitStatus(motorPR->axisNumber,1);
-    motorPZ->setLimitStatus(motorPZ->axisNumber,1);
+    motorPX->setLimitStatus(1);
+    motorPR->setLimitStatus(1);
+    motorPZ->setLimitStatus(1);
 }
 
 void MainWindow::on_btn_motorTest_CloseLimit_clicked()  // PX\PR\PZ 关限位
 {
-    motorPX->setLimitStatus(motorPX->axisNumber,0);
-    motorPR->setLimitStatus(motorPR->axisNumber,0);
-    motorPZ->setLimitStatus(motorPZ->axisNumber,0);
+    motorPX->setLimitStatus(0);
+    motorPR->setLimitStatus(0);
+    motorPZ->setLimitStatus(0);
 }
 
 
@@ -502,23 +502,23 @@ void MainWindow::th_threadOpen()                        //  PMAC 实时线程函
     while(!th_threadOpenFlag)
     {
         // 读取位置
-        value = motorPX->getPosStatus(motorPX->axisNumber);
+        value = motorPX->getPosStatus();
         ui->lbl_threadTest_PX_Pos->setText(QString::number(value, 'f', 2));
 
-        value = motorPR->getPosStatus(motorPR->axisNumber);
+        value = motorPR->getPosStatus();
         ui->lbl_threadTest_PR_Pos->setText(QString::number(value, 'f', 2));
 
-        value = motorPZ->getPosStatus(motorPZ->axisNumber);
+        value = motorPZ->getPosStatus();
         ui->lbl_threadTest_PZ_Pos->setText(QString::number(value, 'f', 2));
 
         // 读取速度
-        value = motorPX->getVelStatus(motorPX->axisNumber);
+        value = motorPX->getVelStatus();
         ui->lbl_threadTest_PX_Vel->setText(QString::number(value, 'f', 2));
 
-        value = motorPR->getVelStatus(motorPR->axisNumber);
+        value = motorPR->getVelStatus();
         ui->lbl_threadTest_PR_Vel->setText(QString::number(value, 'f', 2));
 
-        value = motorPZ->getVelStatus(motorPZ->axisNumber);
+        value = motorPZ->getVelStatus();
         ui->lbl_threadTest_PZ_Vel->setText(QString::number(value, 'f', 2));
 
         // 读取IO
@@ -538,17 +538,17 @@ void MainWindow::th_threadOpen()                        //  PMAC 实时线程函
             setLabelColor(ui->lbl_ioTest_M3,QString("#FF4040"));
 
         // 读取限位
-        if(motorPX->getNLimitStatus(motorPX->axisNumber))       // 限位
+        if(motorPX->getNLimitStatus())       // 限位
             setLabelColor(ui->lbl_threadTest_PX_PLimit,QString("#76EE00"));
         else                                                    // 未限位
             setLabelColor(ui->lbl_threadTest_PX_PLimit,QString("#FF4040"));
 
-        if(motorPZ->getNLimitStatus(motorPZ->axisNumber))       // 限位
+        if(motorPZ->getNLimitStatus())       // 限位
             setLabelColor(ui->lbl_threadTest_PZ_PLimit,QString("#76EE00"));
         else                                                    // 未限位
             setLabelColor(ui->lbl_threadTest_PZ_PLimit,QString("#FF4040"));
 
-        if(motorPR->getNLimitStatus(motorPR->axisNumber))       // 限位
+        if(motorPR->getNLimitStatus())       // 限位
             setLabelColor(ui->lbl_threadTest_PR_PLimit,QString("#76EE00"));
         else                                                    // 未限位
             setLabelColor(ui->lbl_threadTest_PR_PLimit,QString("#FF4040"));
@@ -565,17 +565,17 @@ void MainWindow::on_btn_threadTest_Close_clicked()
 
 void MainWindow::on_btn_threadTest_PX_SetZero_clicked() //  PX轴设置零点
 {
-    motorPX->setZeroPoint(motorPX->axisNumber);
+    motorPX->setZeroPoint();
 }
 
 void MainWindow::on_btn_threadTest_PR_SetZero_clicked() //  PR轴设置零点
 {
-    motorPR->setZeroPoint(motorPR->axisNumber);
+    motorPR->setZeroPoint();
 }
 
 void MainWindow::on_btn_threadTest_PZ_SetZero_clicked() //  PZ轴设置零点
 {
-    motorPZ->setZeroPoint(motorPZ->axisNumber);
+    motorPZ->setZeroPoint();
 }
 
 
@@ -632,7 +632,7 @@ void MainWindow::th_keepGuiAwake()       // 刷新 GUI 线程
 void MainWindow::on_pushButton_clicked()
 {
     //pmacDevice->getIOStatus(3);
-    motorPX->getVelStatus(motorPX->axisNumber);
+    motorPX->getVelStatus();
 //    thread777 = new Controller(pmacDevice,motorPX,motorPR,motorPZ,ui->lbl_threadTest_PX_Pos,ui->lbl_threadTest_PR_Pos,ui->lbl_threadTest_PZ_Pos,ui->lbl_threadTest_PX_Vel,\
 //                               ui->lbl_threadTest_PR_Vel,ui->lbl_threadTest_PZ_Vel,ui->lbl_ioTest_M1,ui->lbl_ioTest_M2,ui->lbl_ioTest_M3,ui->lbl_threadTest_PX_PLimit,\
 //                               ui->lbl_threadTest_PR_PLimit,ui->lbl_threadTest_PZ_PLimit);

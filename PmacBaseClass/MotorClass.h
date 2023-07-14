@@ -21,7 +21,7 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE setInitVel(short sAxis, double dbVel);
+	BYTE setInitVel(double dbVel);
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -31,7 +31,7 @@ public:
 	@return   0 执行异常； 1 执行正常
 	*/
 	/*--------------------------------------------------------------------------*/
-	BYTE setHomeVel(short sAxis, double dbVel);
+	BYTE setHomeVel(double dbVel);
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -40,7 +40,7 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE setZeroPoint(short sAxis);
+	BYTE setZeroPoint();
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -50,7 +50,7 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE setLimitStatus(short sAxis, bool bStatus);
+	BYTE setLimitStatus(bool bStatus);
 
 
 	// Check Status 部分
@@ -61,7 +61,7 @@ public:
 	  @return   double	电机位置值
 	 */
 	 /*--------------------------------------------------------------------------*/
-	double	getPosStatus(short sAxis);
+	double	getPosStatus();
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -70,7 +70,7 @@ public:
 	  @return   double	电机速度值
 	 */
 	 /*--------------------------------------------------------------------------*/
-	double	getVelStatus(short sAxis);
+	double	getVelStatus();
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -79,7 +79,7 @@ public:
 	  @return   0 运动中；1 运动结束
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE getRunStatus(short sAxis);
+	BYTE getRunStatus();
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -88,7 +88,7 @@ public:
 	  @return   0 未限位； 1 限位
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE getPLimitStatus(short sAxis);
+	BYTE getPLimitStatus();
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -97,7 +97,7 @@ public:
 	  @return   0 未限位； 1 限位
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE getNLimitStatus(short sAxis);
+	BYTE getNLimitStatus();
 
 
 	// Motion Control 部分
@@ -110,7 +110,7 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE singleConstSpeedMove(short sAxis, double dbVel, bool bDir);
+	BYTE singleConstSpeedMove(double dbVel, bool bDir);
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -122,7 +122,7 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE singleConstLengthMove(short sAxis, double dbVel, int iPos, bool bDir);
+	BYTE singleConstLengthMove(double dbVel, int iPos, bool bDir);
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -134,7 +134,7 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE singleConstLengthMoveTo(short sAxis, double dbVel, int iPos, bool bDir);
+	BYTE singleConstLengthMoveTo(double dbVel, int iPos, bool bDir);
 
 	/*-------------------------------------------------------------------------*/
 	/**
@@ -152,7 +152,10 @@ public:
 	  @return   0 执行异常； 1 执行正常
 	 */
 	 /*--------------------------------------------------------------------------*/
-	BYTE singleStop(short sAxis);
+	BYTE singleStop();
+
+private:
+	char* get16String(unsigned long num);
 
 public:
 	short	axisNumber;		// 轴号

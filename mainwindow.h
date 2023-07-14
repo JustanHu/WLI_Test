@@ -32,23 +32,23 @@ public slots:
         while(!th_threadOpenFlag)
         {
             // 读取位置
-            value = motorPX->getPosStatus(motorPX->axisNumber);
+            value = motorPX->getPosStatus();
             lbl_threadTest_PX_Pos->setText(QString::number(value, 'f', 2));
 
-            value = motorPR->getPosStatus(motorPR->axisNumber);
+            value = motorPR->getPosStatus();
             lbl_threadTest_PR_Pos->setText(QString::number(value, 'f', 2));
 
-            value = motorPZ->getPosStatus(motorPZ->axisNumber);
+            value = motorPZ->getPosStatus();
             lbl_threadTest_PZ_Pos->setText(QString::number(value, 'f', 2));
 
             // 读取速度
-            value = motorPX->getVelStatus(motorPX->axisNumber);
+            value = motorPX->getVelStatus();
             lbl_threadTest_PX_Vel->setText(QString::number(value, 'f', 2));
 
-            value = motorPR->getVelStatus(motorPR->axisNumber);
+            value = motorPR->getVelStatus();
             lbl_threadTest_PR_Vel->setText(QString::number(value, 'f', 2));
 
-            value = motorPZ->getVelStatus(motorPZ->axisNumber);
+            value = motorPZ->getVelStatus();
             lbl_threadTest_PZ_Vel->setText(QString::number(value, 'f', 2));
 
             // 读取IO
@@ -68,17 +68,17 @@ public slots:
                 setLabelColor(lbl_ioTest_M3,QString("#FF4040"));
 
             // 读取限位
-            if(motorPX->getPLimitStatus(motorPX->axisNumber))       // 限位
+            if(motorPX->getPLimitStatus())       // 限位
                 setLabelColor(lbl_threadTest_PX_PLimit,QString("#76EE00"));
             else                                                    // 未限位
                 setLabelColor(lbl_threadTest_PX_PLimit,QString("#FF4040"));
 
-            if(motorPZ->getPLimitStatus(motorPZ->axisNumber))       // 限位
+            if(motorPZ->getPLimitStatus())       // 限位
                 setLabelColor(lbl_threadTest_PZ_PLimit,QString("#76EE00"));
             else                                                    // 未限位
                 setLabelColor(lbl_threadTest_PZ_PLimit,QString("#FF4040"));
 
-            if(motorPR->getPLimitStatus(motorPR->axisNumber))       // 限位
+            if(motorPR->getPLimitStatus())       // 限位
                 setLabelColor(lbl_threadTest_PR_PLimit,QString("#76EE00"));
             else                                                    // 未限位
                 setLabelColor(lbl_threadTest_PR_PLimit,QString("#FF4040"));
