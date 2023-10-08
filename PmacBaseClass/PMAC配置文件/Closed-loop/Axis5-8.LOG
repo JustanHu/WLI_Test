@@ -2,13 +2,13 @@
 ;
 000001:            Processing Macro File: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.pmc
 000002:            $60450
-000003:            Total Lines: 47
+000003:            Total Lines: 80
 000004:            Compiling for PLCC: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.PMA = C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.56K
 000005:            PLCC Compiling PMAC file: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.PMA
 000006:            Success in Compiling to output file: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.56K
 000007:            No PLCC(s) were compiled
 000008:            Downloading file: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.56K
-000009:            Downloaded 50 lines in 30 msecs
+000009:            Downloaded 78 lines in 36 msecs
 000010:            Writing MAP file: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.MAP
 000011:            Writing macro dictionary table: C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis5-8.TBL
 000012:            Total Warnings: 0

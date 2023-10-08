@@ -12,6 +12,7 @@ LIBS += -L$$PWD -lWS2_32
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    inifile.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -22,6 +23,7 @@ HEADERS += \
     PmacBaseClass/pch.h \
     PmacBaseClass/pmacserver.h \
     brukerWLI.h \
+    inifile.h \
     mainwindow.h
 
 FORMS += \

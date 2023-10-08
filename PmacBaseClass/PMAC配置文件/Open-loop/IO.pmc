@@ -1,7 +1,7 @@
 OPEN PLC1 CLEAR
-M32=$FF;
-M34=$0;
-M40=$FF00;
-M42=$FFFF;
-DIS PLC1;
+M32=$FF	;0-8位定义为输出
+M34=$0	;9-16位定义为输入
+M40=$FF00  ;定义输入输出
+M42=$FFFF  ;所有点均为I/O类型
+DIS PLC1	;禁用(在上电扫描一次并立即禁用)
 CLOSE

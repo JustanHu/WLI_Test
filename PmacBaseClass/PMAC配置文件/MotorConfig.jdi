@@ -5,8 +5,8 @@ homeSpeed = 1
 rev = 1
 [PZ]
 axisNumber = 6
-initSpeed = 1
-homeSpeed = 1
+initSpeed = 5
+homeSpeed = 5
 rev = 1
 [PR]
 axisNumber = 7

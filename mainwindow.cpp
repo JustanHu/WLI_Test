@@ -4,6 +4,7 @@
 #include <QString>
 #include <thread>
 
+
 using namespace std;
 static bool th_threadOpenFlag = FALSE;
 static bool th_keepGuiAwakeFlag = FALSE;
@@ -15,11 +16,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("MRe-WLI Test Program");
 
+    const string filePath = "./MotorConfig.jdi";
+
     // 创建pmac对象和电机对象
     pmacDevice = new PmacClass();
-    motorPX = new MotorClass("PX");
-    motorPZ = new MotorClass("PZ");
-    motorPR = new MotorClass("PR");
+    motorPX = new MotorClass(filePath,"PX");
+    motorPZ = new MotorClass(filePath,"PZ");
+    motorPR = new MotorClass(filePath,"PR");
 
     ui->spb_motorTest_PX_InitSpeed->setValue(motorPX->initSpeed);
     ui->spb_motorTest_PZ_InitSpeed->setValue(motorPZ->initSpeed);
@@ -45,7 +48,7 @@ MainWindow::~MainWindow()
     delete motorPX;
     delete motorPZ;
     delete motorPR;
-    delete thread777;
+//    delete thread777;
 
     delete WLITest;
 
@@ -598,18 +601,18 @@ void MainWindow::setLabelColor(QLabel* label, QString color)    //  设置Label�
             background:" + color;
     label->setStyleSheet(SheetStyle);
 }
-void Worker::setLabelColor(QLabel* label, QString color)    //  设置Label颜色
-{
-    const QString SheetStyle =
-           "min-width:14px;         \
-            min-height:14px;        \
-            max-width:14px;         \
-            max-height:14px;        \
-            border-radius:9px;      \
-            border:2px solid gray;  \
-            background:" + color;
-    label->setStyleSheet(SheetStyle);
-}
+//void Worker::setLabelColor(QLabel* label, QString color)    //  设置Label颜色
+//{
+//    const QString SheetStyle =
+//           "min-width:14px;         \
+//            min-height:14px;        \
+//            max-width:14px;         \
+//            max-height:14px;        \
+//            border-radius:9px;      \
+//            border:2px solid gray;  \
+//            background:" + color;
+//    label->setStyleSheet(SheetStyle);
+//}
 
 
 void MainWindow::keepGuiAwake()       // 开启刷新 GUI 线程
@@ -629,6 +632,36 @@ void MainWindow::th_keepGuiAwake()       // 刷新 GUI 线程
     }
 }
 
+void MainWindow::on_lbl_motorTest_PX_Home_clicked()
+{
+    motorPX->setLimitStatus(0);
+    motorPX->setHomeVel(ui->spb_motorTest_PX_HomeSpeed->value());
+    motorPX->singleHome();
+}
+
+
+void MainWindow::on_lbl_motorTest_PR_Home_clicked()
+{
+    motorPR->setLimitStatus(0);
+    motorPR->setHomeVel(ui->spb_motorTest_PR_HomeSpeed->value());
+    motorPR->singleHome();
+}
+
+
+void MainWindow::on_lbl_motorTest_PZ_Home_clicked()
+{
+    motorPZ->setLimitStatus(0);
+    motorPZ->setHomeVel(ui->spb_motorTest_PZ_HomeSpeed->value());
+    motorPZ->singleHome();
+}
+
+
+
+
+
+
+
+
 void MainWindow::on_pushButton_clicked()
 {
     //pmacDevice->getIOStatus(3);
@@ -643,20 +676,5 @@ void MainWindow::on_pushButton_clicked()
 
 
 
-void MainWindow::on_lbl_motorTest_PX_Home_clicked()
-{
-    motorPX->singleHome();
-}
 
-
-void MainWindow::on_lbl_motorTest_PR_Home_clicked()
-{
-    motorPR->singleHome();
-}
-
-
-void MainWindow::on_lbl_motorTest_PZ_Home_clicked()
-{
-    motorPZ->singleHome();
-}
 

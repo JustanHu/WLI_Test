@@ -1,14 +1,14 @@
 ; Created by PMAC Win32 Driver from:C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Home.pmc
 ;
 ;C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Home.pmc
-I7012=2;4
-I7022=2;5
-I7032=2;6
-I7042=2;7
-I7112=2;8
-I7122=2;9
-I7132=2;10
-I7142=2;11
+I7012=1;4
+I7022=1;5
+I7032=1;6
+I7042=1;7
+I7112=1;8
+I7122=1;9
+I7132=1;10
+I7142=1;11
 I7013=0;14
 I7023=0;15
 I7033=0;16

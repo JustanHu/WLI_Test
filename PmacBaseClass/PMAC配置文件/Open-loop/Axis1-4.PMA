@@ -1,10 +1,10 @@
-; Created by PMAC Win32 Driver from:C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis1-4.pmc
+; Created by PMAC Win32 Driver from:C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Open-loop\Axis1-4.pmc
 ;
-;C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Closed-loop\Axis1-4.pmc
+;C:\Users\DELL\Desktop\PMACTest\WLI_Test\PmacBaseClass\PMAC配置文件\Open-loop\Axis1-4.pmc
 I7016 = 3 ;1
 I7026 = 3 ;2
 I7036 = 3 ;3
-I7046 = 3 ;4
+I7046 = 3;4
 I7010 = 8 ;5
 I7020 = 8 ;6
 I7030 = 8 ;7
@@ -25,10 +25,10 @@ I102 = $078004 ;21
 I202 = $07800C ;22
 I302 = $078014 ;23
 I402 = $07801C ;24
-I124 = $100001 ;25
-I224 = $100001 ;26
-I324 = $100001 ;27
-I424 = $100001 ;28
+I124 = $120001 ;25
+I224 = $120001 ;26
+I324 = $120001 ;27
+I424 = $120001 ;28
 I130 = 700 ;29
 I132 = 15050 ;30
 I133 = 5000 ;31

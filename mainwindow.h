@@ -13,138 +13,116 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+//class Worker : public QObject
+//{
+//    Q_OBJECT
 
+//public slots:
+//    void doWork(PmacClass* pmacDevice,MotorClass* motorPX, MotorClass* motorPR, MotorClass* motorPZ, QLabel* lbl_threadTest_PX_Pos,QLabel* lbl_threadTest_PR_Pos,QLabel* lbl_threadTest_PZ_Pos, \
+//                QLabel* lbl_threadTest_PX_Vel,QLabel* lbl_threadTest_PR_Vel,QLabel* lbl_threadTest_PZ_Vel, \
+//                QLabel* lbl_ioTest_M1,QLabel* lbl_ioTest_M2, QLabel* lbl_ioTest_M3,\
+//                QLabel* lbl_threadTest_PX_PLimit,QLabel* lbl_threadTest_PR_PLimit,QLabel* lbl_threadTest_PZ_PLimit
+//                )
+//    {
+//        double value;
+//        CoInitialize(NULL);
+//        while(!th_threadOpenFlag)
+//        {
+//            // 读取位置
+//            value = motorPX->getPosStatus();
+//            lbl_threadTest_PX_Pos->setText(QString::number(value, 'f', 2));
 
+//            value = motorPR->getPosStatus();
+//            lbl_threadTest_PR_Pos->setText(QString::number(value, 'f', 2));
 
-class Worker : public QObject
-{
-    Q_OBJECT
+//            value = motorPZ->getPosStatus();
+//            lbl_threadTest_PZ_Pos->setText(QString::number(value, 'f', 2));
 
-public slots:
-    void doWork(PmacClass* pmacDevice,MotorClass* motorPX, MotorClass* motorPR, MotorClass* motorPZ, QLabel* lbl_threadTest_PX_Pos,QLabel* lbl_threadTest_PR_Pos,QLabel* lbl_threadTest_PZ_Pos, \
-                QLabel* lbl_threadTest_PX_Vel,QLabel* lbl_threadTest_PR_Vel,QLabel* lbl_threadTest_PZ_Vel, \
-                QLabel* lbl_ioTest_M1,QLabel* lbl_ioTest_M2, QLabel* lbl_ioTest_M3,\
-                QLabel* lbl_threadTest_PX_PLimit,QLabel* lbl_threadTest_PR_PLimit,QLabel* lbl_threadTest_PZ_PLimit
-                )
-    {
-        double value;
-        CoInitialize(NULL);
-        while(!th_threadOpenFlag)
-        {
-            // 读取位置
-            value = motorPX->getPosStatus();
-            lbl_threadTest_PX_Pos->setText(QString::number(value, 'f', 2));
+//            // 读取速度
+//            value = motorPX->getVelStatus();
+//            lbl_threadTest_PX_Vel->setText(QString::number(value, 'f', 2));
 
-            value = motorPR->getPosStatus();
-            lbl_threadTest_PR_Pos->setText(QString::number(value, 'f', 2));
+//            value = motorPR->getVelStatus();
+//            lbl_threadTest_PR_Vel->setText(QString::number(value, 'f', 2));
 
-            value = motorPZ->getPosStatus();
-            lbl_threadTest_PZ_Pos->setText(QString::number(value, 'f', 2));
+//            value = motorPZ->getVelStatus();
+//            lbl_threadTest_PZ_Vel->setText(QString::number(value, 'f', 2));
 
-            // 读取速度
-            value = motorPX->getVelStatus();
-            lbl_threadTest_PX_Vel->setText(QString::number(value, 'f', 2));
+//            // 读取IO
+//            if(pmacDevice->getIOStatus(1))     // 高电平
+//                setLabelColor(lbl_ioTest_M1,QString("#76EE00"));
+//            else                                // 低电平
+//                setLabelColor(lbl_ioTest_M1,QString("#FF4040"));
 
-            value = motorPR->getVelStatus();
-            lbl_threadTest_PR_Vel->setText(QString::number(value, 'f', 2));
+//            if(pmacDevice->getIOStatus(2))     // 高电平
+//                setLabelColor(lbl_ioTest_M2,QString("#76EE00"));
+//            else                                // 低电平
+//                setLabelColor(lbl_ioTest_M2,QString("#FF4040"));
 
-            value = motorPZ->getVelStatus();
-            lbl_threadTest_PZ_Vel->setText(QString::number(value, 'f', 2));
+//            if(pmacDevice->getIOStatus(3))     // 高电平
+//                setLabelColor(lbl_ioTest_M3,QString("#76EE00"));
+//            else                                // 低电平
+//                setLabelColor(lbl_ioTest_M3,QString("#FF4040"));
 
-            // 读取IO
-            if(pmacDevice->getIOStatus(1))     // 高电平
-                setLabelColor(lbl_ioTest_M1,QString("#76EE00"));
-            else                                // 低电平
-                setLabelColor(lbl_ioTest_M1,QString("#FF4040"));
+//            // 读取限位
+//            if(motorPX->getPLimitStatus())       // 限位
+//                setLabelColor(lbl_threadTest_PX_PLimit,QString("#76EE00"));
+//            else                                                    // 未限位
+//                setLabelColor(lbl_threadTest_PX_PLimit,QString("#FF4040"));
 
-            if(pmacDevice->getIOStatus(2))     // 高电平
-                setLabelColor(lbl_ioTest_M2,QString("#76EE00"));
-            else                                // 低电平
-                setLabelColor(lbl_ioTest_M2,QString("#FF4040"));
+//            if(motorPZ->getPLimitStatus())       // 限位
+//                setLabelColor(lbl_threadTest_PZ_PLimit,QString("#76EE00"));
+//            else                                                    // 未限位
+//                setLabelColor(lbl_threadTest_PZ_PLimit,QString("#FF4040"));
 
-            if(pmacDevice->getIOStatus(3))     // 高电平
-                setLabelColor(lbl_ioTest_M3,QString("#76EE00"));
-            else                                // 低电平
-                setLabelColor(lbl_ioTest_M3,QString("#FF4040"));
+//            if(motorPR->getPLimitStatus())       // 限位
+//                setLabelColor(lbl_threadTest_PR_PLimit,QString("#76EE00"));
+//            else                                                    // 未限位
+//                setLabelColor(lbl_threadTest_PR_PLimit,QString("#FF4040"));
 
-            // 读取限位
-            if(motorPX->getPLimitStatus())       // 限位
-                setLabelColor(lbl_threadTest_PX_PLimit,QString("#76EE00"));
-            else                                                    // 未限位
-                setLabelColor(lbl_threadTest_PX_PLimit,QString("#FF4040"));
+//            this_thread::sleep_for(std::chrono::milliseconds(20));
+//        }
+//        CoUninitialize();
+//    }
+//public:
+//    bool th_threadOpenFlag = 0;
+//    void setLabelColor(QLabel* label, QString color);
+//};
 
-            if(motorPZ->getPLimitStatus())       // 限位
-                setLabelColor(lbl_threadTest_PZ_PLimit,QString("#76EE00"));
-            else                                                    // 未限位
-                setLabelColor(lbl_threadTest_PZ_PLimit,QString("#FF4040"));
+//class Controller : public QObject
+//{
+//    Q_OBJECT
 
-            if(motorPR->getPLimitStatus())       // 限位
-                setLabelColor(lbl_threadTest_PR_PLimit,QString("#76EE00"));
-            else                                                    // 未限位
-                setLabelColor(lbl_threadTest_PR_PLimit,QString("#FF4040"));
+//public:
+//    Controller(PmacClass* pmacDevice,MotorClass* motorPX, MotorClass* motorPR, MotorClass* motorPZ, QLabel* lbl_threadTest_PX_Pos,QLabel* lbl_threadTest_PR_Pos,QLabel* lbl_threadTest_PZ_Pos, \
+//               QLabel* lbl_threadTest_PX_Vel,QLabel* lbl_threadTest_PR_Vel,QLabel* lbl_threadTest_PZ_Vel, \
+//               QLabel* lbl_ioTest_M1,QLabel* lbl_ioTest_M2, QLabel* lbl_ioTest_M3,\
+//               QLabel* lbl_threadTest_PX_PLimit,QLabel* lbl_threadTest_PR_PLimit,QLabel* lbl_threadTest_PZ_PLimit) {
+//        worker = new Worker;
+//        worker->moveToThread(&workerThread);
+//        connect(&workerThread, &QThread::finished, worker, &QObject::deleteLater);
+//        connect(this, &Controller::operate, worker, &Worker::doWork);
+//        workerThread.start();
+//        emit operate(pmacDevice,motorPX,motorPR,motorPZ,lbl_threadTest_PX_Pos,lbl_threadTest_PR_Pos,lbl_threadTest_PZ_Pos,lbl_threadTest_PX_Vel,\
+//                     lbl_threadTest_PR_Vel,lbl_threadTest_PZ_Vel,lbl_ioTest_M1,lbl_ioTest_M2,lbl_ioTest_M3,lbl_threadTest_PX_PLimit,\
+//                     lbl_threadTest_PR_PLimit,lbl_threadTest_PZ_PLimit
+//                     );
 
-            this_thread::sleep_for(std::chrono::milliseconds(20));
-        }
-        CoUninitialize();
-    }
-public:
-    bool th_threadOpenFlag = 0;
-    void setLabelColor(QLabel* label, QString color);
-};
+//    }
+//    ~Controller() {
+//        worker->th_threadOpenFlag = 1;
+//        workerThread.quit();
+//        workerThread.wait();
+//    }
+//public:
+//    Worker *worker;
+//    QThread workerThread;
 
-class Controller : public QObject
-{
-    Q_OBJECT
-
-public:
-    Controller(PmacClass* pmacDevice,MotorClass* motorPX, MotorClass* motorPR, MotorClass* motorPZ, QLabel* lbl_threadTest_PX_Pos,QLabel* lbl_threadTest_PR_Pos,QLabel* lbl_threadTest_PZ_Pos, \
-               QLabel* lbl_threadTest_PX_Vel,QLabel* lbl_threadTest_PR_Vel,QLabel* lbl_threadTest_PZ_Vel, \
-               QLabel* lbl_ioTest_M1,QLabel* lbl_ioTest_M2, QLabel* lbl_ioTest_M3,\
-               QLabel* lbl_threadTest_PX_PLimit,QLabel* lbl_threadTest_PR_PLimit,QLabel* lbl_threadTest_PZ_PLimit) {
-        worker = new Worker;
-        worker->moveToThread(&workerThread);
-        connect(&workerThread, &QThread::finished, worker, &QObject::deleteLater);
-        connect(this, &Controller::operate, worker, &Worker::doWork);
-        workerThread.start();
-        emit operate(pmacDevice,motorPX,motorPR,motorPZ,lbl_threadTest_PX_Pos,lbl_threadTest_PR_Pos,lbl_threadTest_PZ_Pos,lbl_threadTest_PX_Vel,\
-                     lbl_threadTest_PR_Vel,lbl_threadTest_PZ_Vel,lbl_ioTest_M1,lbl_ioTest_M2,lbl_ioTest_M3,lbl_threadTest_PX_PLimit,\
-                     lbl_threadTest_PR_PLimit,lbl_threadTest_PZ_PLimit
-                     );
-
-    }
-    ~Controller() {
-        worker->th_threadOpenFlag = 1;
-        workerThread.quit();
-        workerThread.wait();
-    }
-public:
-    Worker *worker;
-    QThread workerThread;
-
-signals:
-    void operate(PmacClass* pmacDevice,MotorClass* motorPX, MotorClass* motorPR, MotorClass* motorPZ, QLabel* lbl_threadTest_PX_Pos,QLabel* lbl_threadTest_PR_Pos,QLabel* lbl_threadTest_PZ_Pos, \
-                 QLabel* lbl_threadTest_PX_Vel,QLabel* lbl_threadTest_PR_Vel,QLabel* lbl_threadTest_PZ_Vel, \
-                 QLabel* lbl_ioTest_M1,QLabel* lbl_ioTest_M2, QLabel* lbl_ioTest_M3,QLabel* lbl_threadTest_PX_PLimit,QLabel* lbl_threadTest_PR_PLimit,QLabel* lbl_threadTest_PZ_PLimit);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//signals:
+//    void operate(PmacClass* pmacDevice,MotorClass* motorPX, MotorClass* motorPR, MotorClass* motorPZ, QLabel* lbl_threadTest_PX_Pos,QLabel* lbl_threadTest_PR_Pos,QLabel* lbl_threadTest_PZ_Pos, \
+//                 QLabel* lbl_threadTest_PX_Vel,QLabel* lbl_threadTest_PR_Vel,QLabel* lbl_threadTest_PZ_Vel, \
+//                 QLabel* lbl_ioTest_M1,QLabel* lbl_ioTest_M2, QLabel* lbl_ioTest_M3,QLabel* lbl_threadTest_PX_PLimit,QLabel* lbl_threadTest_PR_PLimit,QLabel* lbl_threadTest_PZ_PLimit);
+//};
 
 
 class MainWindow : public QMainWindow {
@@ -383,7 +361,7 @@ private:
     MotorClass* motorPX;
     MotorClass* motorPZ;
     MotorClass* motorPR;
-    Controller* thread777;
+//    Controller* thread777;
 
 };
 

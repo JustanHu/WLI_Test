@@ -37,7 +37,7 @@
      <rect>
       <x>-5</x>
       <y>-2</y>
-      <width>431</width>
+      <width>391</width>
       <height>800</height>
      </rect>
     </property>
@@ -1628,6 +1628,9 @@ QPushButton:pressed {
           <property name="maximum">
            <double>30.000000000000000</double>
           </property>
+          <property name="value">
+           <double>5.000000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="1" column="2">
@@ -1650,6 +1653,9 @@ QPushButton:pressed {
           </property>
           <property name="maximum">
            <double>30.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>5.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -1674,6 +1680,9 @@ QPushButton:pressed {
           <property name="maximum">
            <double>30.000000000000000</double>
           </property>
+          <property name="value">
+           <double>5.000000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="2" column="1">
@@ -1696,6 +1705,9 @@ QPushButton:pressed {
           </property>
           <property name="maximum">
            <double>30.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>5.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -1720,6 +1732,9 @@ QPushButton:pressed {
           <property name="maximum">
            <double>30.000000000000000</double>
           </property>
+          <property name="value">
+           <double>5.000000000000000</double>
+          </property>
          </widget>
         </item>
         <item row="2" column="3">
@@ -1742,6 +1757,9 @@ QPushButton:pressed {
           </property>
           <property name="maximum">
            <double>30.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>5.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -1837,10 +1855,10 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_motorTest_OpenLimit">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>220</y>
+         <x>50</x>
+         <y>222</y>
          <width>61</width>
-         <height>21</height>
+         <height>16</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1869,10 +1887,10 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btn_motorTest_CloseLimit">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>250</y>
+         <x>50</x>
+         <y>249</y>
          <width>61</width>
-         <height>21</height>
+         <height>16</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -2441,14 +2459,17 @@ QPushButton:pressed {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>50</y>
-         <width>335</width>
-         <height>51</height>
+         <y>70</y>
+         <width>331</width>
+         <height>32</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="hL_threadTest1">
+       <layout class="QHBoxLayout" name="hL_threadTest1" stretch="1">
+        <property name="leftMargin">
+         <number>10</number>
+        </property>
         <property name="rightMargin">
-         <number>35</number>
+         <number>30</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest1">
@@ -2462,7 +2483,7 @@ QPushButton:pressed {
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
-	font: 700 9pt &quot;微软雅黑&quot;;
+	font: 700 8pt &quot;微软雅黑&quot;;
 }</string>
            </property>
            <property name="text">
@@ -2476,42 +2497,50 @@ QPushButton:pressed {
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
-	font: 700 9pt &quot;微软雅黑&quot;;
+	font: 700 8pt &quot;微软雅黑&quot;;
 }</string>
            </property>
            <property name="text">
             <string>PLimit</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_NLimit">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
-	font: 700 9pt &quot;微软雅黑&quot;;
+	font: 700 8pt &quot;微软雅黑&quot;;
 }</string>
            </property>
            <property name="text">
             <string>NLimit</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_Pos">
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
-	font: 700 9pt &quot;微软雅黑&quot;;
+	font: 700 8pt &quot;微软雅黑&quot;;
 }</string>
            </property>
            <property name="text">
             <string>Pos</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
            <property name="indent">
             <number>-1</number>
@@ -2521,14 +2550,14 @@ QPushButton:pressed {
            <property name="styleSheet">
             <string notr="true">QLabel {
 	color: #68838B;
-	font: 700 9pt &quot;微软雅黑&quot;;
+	font: 700 8pt &quot;微软雅黑&quot;;
 }</string>
            </property>
            <property name="text">
             <string>   Vel</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </widget>
@@ -2541,7 +2570,7 @@ QPushButton:pressed {
          <x>0</x>
          <y>140</y>
          <width>331</width>
-         <height>41</height>
+         <height>42</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="hL_threadTest3">
@@ -2549,7 +2578,7 @@ QPushButton:pressed {
          <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>20</number>
+         <number>8</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest3">
@@ -2670,7 +2699,7 @@ background: #FF4040;
          <x>0</x>
          <y>180</y>
          <width>331</width>
-         <height>41</height>
+         <height>42</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="hL_threadTest4">
@@ -2678,7 +2707,7 @@ background: #FF4040;
          <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>20</number>
+         <number>8</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest4">
@@ -2799,7 +2828,7 @@ background: #FF4040;
          <x>0</x>
          <y>100</y>
          <width>332</width>
-         <height>41</height>
+         <height>42</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="hL_threadTest2">
@@ -2807,7 +2836,7 @@ background: #FF4040;
          <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>20</number>
+         <number>8</number>
         </property>
         <item>
          <widget class="QSplitter" name="spl_threadTest2">
@@ -2854,6 +2883,12 @@ background: #FF4040;
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PX_NLimit">
+           <property name="minimumSize">
+            <size>
+             <width>18</width>
+             <height>18</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QLabel{
 min-width:     14px;     
@@ -2865,11 +2900,17 @@ border:2px solid gray;
 background: #FF4040;           
 }</string>
            </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
            <property name="text">
             <string/>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
+           </property>
+           <property name="margin">
+            <number>0</number>
            </property>
           </widget>
           <widget class="QLabel" name="lbl_threadTest_PX_Pos">

@@ -1,13 +1,16 @@
 #pragma once
 
 #include "PmacClass.h"
+
 #include <string>
 using namespace std;
+
+
 
 class EXPORT_CLASS MotorClass
 {
 public:
-	MotorClass(string motorName);
+	MotorClass(string filePath,string motorName);
 	virtual ~MotorClass();
 
 public:
@@ -155,8 +158,23 @@ public:
 	BYTE singleStop();
 
 private:
+	/*-------------------------------------------------------------------------*/
+	/**
+	  @brief    get16String，lnog转16进制函数
+	  @param    num		数值
+	  @return   char*	16进制数
+	 */
+	 /*--------------------------------------------------------------------------*/
 	char* get16String(unsigned long num);
-	void errorWarning(long errorNumber);
+
+	/*-------------------------------------------------------------------------*/
+	/**
+	  @brief    errorWarning，错误警告弹窗
+	  @param    errorNumber	错误码
+	  @return   0 执行异常； 1 执行正常
+	 */
+	 /*--------------------------------------------------------------------------*/
+	BYTE errorWarning(long errorNumber);
 
 public:
 	short	axisNumber;		// 轴号
